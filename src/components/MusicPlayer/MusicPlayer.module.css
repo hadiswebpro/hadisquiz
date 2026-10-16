@@ -1,0 +1,1 @@
+.player{position:fixed;right:1rem;top:1rem;z-index:10}.player button{border:1px solid var(--accent);border-radius:50%;width:44px;height:44px;background:var(--panel);cursor:pointer}
