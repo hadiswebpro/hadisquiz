@@ -1,2414 +1,1305 @@
-// 100 English-language questions for "How Well Do You Know Hadis?"
-// 20 questions per world. Correct answers are kept in the data, not shown to players.
-// Q36 and Q54 reflect the current interpretation of the user's answers.
-export type QuizLevel = "bloom" | "echo" | "veil" | "abyss" | "void";
-export interface QuizQuestion {
-  id: number;
-  level: QuizLevel;
-  question: string;
-  options: { id: "A" | "B" | "C" | "D"; text: string }[];
-  correctAnswerId: "A" | "B" | "C" | "D";
-}
+import type { Question } from "../types/quiz";
 
-export const questions: QuizQuestion[] = [
+// 100 English questions, 20 per world; 10 randomly drawn per round.
+export const questions: Question[] = [
   {
     "id": 1,
-    "level": "bloom",
-    "question": "What's my favorite color?",
+    "level": 1,
+    "prompt": "What's my favorite color?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Olive green"
-      },
-      {
-        "id": "B",
-        "text": "Deep purple"
-      },
-      {
-        "id": "C",
-        "text": "Moss green"
-      },
-      {
-        "id": "D",
-        "text": "Navy blue"
-      }
+      "Olive green",
+      "Deep purple",
+      "Moss green",
+      "Navy blue"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 2,
-    "level": "bloom",
-    "question": "What's my favorite season?",
+    "level": 1,
+    "prompt": "What's my favorite season?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Winter"
-      },
-      {
-        "id": "B",
-        "text": "Autumn"
-      },
-      {
-        "id": "C",
-        "text": "Summer"
-      },
-      {
-        "id": "D",
-        "text": "Spring"
-      }
+      "Winter",
+      "Autumn",
+      "Summer",
+      "Spring"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 3,
-    "level": "bloom",
-    "question": "What's my favorite drink?",
+    "level": 1,
+    "prompt": "What's my favorite drink?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Orange juice"
-      },
-      {
-        "id": "B",
-        "text": "Iced coffee"
-      },
-      {
-        "id": "C",
-        "text": "Lemonade"
-      },
-      {
-        "id": "D",
-        "text": "Apple juice"
-      }
+      "Orange juice",
+      "Iced coffee",
+      "Lemonade",
+      "Apple juice"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 4,
-    "level": "bloom",
-    "question": "What's my favorite food?",
+    "level": 1,
+    "prompt": "What's my favorite food?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Pizza"
-      },
-      {
-        "id": "B",
-        "text": "Zereshk polo ba morgh (barberry rice with chicken)"
-      },
-      {
-        "id": "C",
-        "text": "Sushi"
-      },
-      {
-        "id": "D",
-        "text": "Pasta"
-      }
+      "Pizza",
+      "Zereshk polo ba morgh (barberry rice with chicken)",
+      "Sushi",
+      "Pasta"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 5,
-    "level": "bloom",
-    "question": "Who would I want to be like?",
+    "level": 1,
+    "prompt": "Who would I want to be like?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "My best friend"
-      },
-      {
-        "id": "B",
-        "text": "A famous artist"
-      },
-      {
-        "id": "C",
-        "text": "Not even one person"
-      },
-      {
-        "id": "D",
-        "text": "Someone successful"
-      }
+      "My best friend",
+      "A famous artist",
+      "Not even one person",
+      "Someone successful"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 6,
-    "level": "bloom",
-    "question": "Which animal do I love most?",
+    "level": 1,
+    "prompt": "Which animal do I love most?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Kittens"
-      },
-      {
-        "id": "B",
-        "text": "Foxes"
-      },
-      {
-        "id": "C",
-        "text": "Puppies"
-      },
-      {
-        "id": "D",
-        "text": "Rabbits"
-      }
+      "Kittens",
+      "Foxes",
+      "Puppies",
+      "Rabbits"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 7,
-    "level": "bloom",
-    "question": "Which natural setting do I prefer?",
+    "level": 1,
+    "prompt": "Which natural setting do I prefer?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "The beach"
-      },
-      {
-        "id": "B",
-        "text": "The desert"
-      },
-      {
-        "id": "C",
-        "text": "The mountains"
-      },
-      {
-        "id": "D",
-        "text": "A forest"
-      }
+      "The beach",
+      "The desert",
+      "The mountains",
+      "A forest"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 8,
-    "level": "bloom",
-    "question": "What's my favorite month?",
+    "level": 1,
+    "prompt": "What's my favorite month?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "December"
-      },
-      {
-        "id": "B",
-        "text": "October"
-      },
-      {
-        "id": "C",
-        "text": "June"
-      },
-      {
-        "id": "D",
-        "text": "April"
-      }
+      "December",
+      "October",
+      "June",
+      "April"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 9,
-    "level": "bloom",
-    "question": "What's my favorite kind of weather?",
+    "level": 1,
+    "prompt": "What's my favorite kind of weather?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Foggy weather"
-      },
-      {
-        "id": "B",
-        "text": "Snowy weather"
-      },
-      {
-        "id": "C",
-        "text": "Rainy weather"
-      },
-      {
-        "id": "D",
-        "text": "Sunny weather"
-      }
+      "Foggy weather",
+      "Snowy weather",
+      "Rainy weather",
+      "Sunny weather"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 10,
-    "level": "bloom",
-    "question": "Where do I feel most at peace?",
+    "level": 1,
+    "prompt": "Where do I feel most at peace?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "At a café"
-      },
-      {
-        "id": "B",
-        "text": "In a busy city"
-      },
-      {
-        "id": "C",
-        "text": "In nature"
-      },
-      {
-        "id": "D",
-        "text": "At a party"
-      }
+      "At a café",
+      "In a busy city",
+      "In nature",
+      "At a party"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 11,
-    "level": "echo",
-    "question": "Which band do I love?",
+    "level": 2,
+    "prompt": "Which band do I love?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Muse"
-      },
-      {
-        "id": "B",
-        "text": "Radiohead"
-      },
-      {
-        "id": "C",
-        "text": "Coldplay"
-      },
-      {
-        "id": "D",
-        "text": "Anathema"
-      }
+      "Muse",
+      "Radiohead",
+      "Coldplay",
+      "Anathema"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 12,
-    "level": "echo",
-    "question": "Which TV series would I pick?",
+    "level": 2,
+    "prompt": "Which TV series would I pick?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Supernatural"
-      },
-      {
-        "id": "B",
-        "text": "The Vampire Diaries"
-      },
-      {
-        "id": "C",
-        "text": "Dark"
-      },
-      {
-        "id": "D",
-        "text": "The Walking Dead"
-      }
+      "Supernatural",
+      "The Vampire Diaries",
+      "Dark",
+      "The Walking Dead"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 13,
-    "level": "echo",
-    "question": "Which country would I love to visit?",
+    "level": 2,
+    "prompt": "Which country would I love to visit?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Spain"
-      },
-      {
-        "id": "B",
-        "text": "Italy"
-      },
-      {
-        "id": "C",
-        "text": "France"
-      },
-      {
-        "id": "D",
-        "text": "Japan"
-      }
+      "Spain",
+      "Italy",
+      "France",
+      "Japan"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 14,
-    "level": "echo",
-    "question": "Which sweet treat do I prefer?",
+    "level": 2,
+    "prompt": "Which sweet treat do I prefer?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Cake"
-      },
-      {
-        "id": "B",
-        "text": "Candy"
-      },
-      {
-        "id": "C",
-        "text": "Chocolate"
-      },
-      {
-        "id": "D",
-        "text": "Ice cream"
-      }
+      "Cake",
+      "Candy",
+      "Chocolate",
+      "Ice cream"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 15,
-    "level": "echo",
-    "question": "What does my mind often drift into?",
+    "level": 2,
+    "prompt": "What does my mind often drift into?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Planning"
-      },
-      {
-        "id": "B",
-        "text": "Overthinking conversations"
-      },
-      {
-        "id": "C",
-        "text": "Daydreaming"
-      },
-      {
-        "id": "D",
-        "text": "Remembering the past"
-      }
+      "Planning",
+      "Overthinking conversations",
+      "Daydreaming",
+      "Remembering the past"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 16,
-    "level": "echo",
-    "question": "Which style do I prefer?",
+    "level": 2,
+    "prompt": "Which style do I prefer?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Classic"
-      },
-      {
-        "id": "B",
-        "text": "Sporty"
-      },
-      {
-        "id": "C",
-        "text": "Bohemian"
-      },
-      {
-        "id": "D",
-        "text": "Minimalist"
-      }
+      "Classic",
+      "Sporty",
+      "Bohemian",
+      "Minimalist"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 17,
-    "level": "echo",
-    "question": "What's my favorite flower?",
+    "level": 2,
+    "prompt": "What's my favorite flower?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Tulips"
-      },
-      {
-        "id": "B",
-        "text": "Lilies"
-      },
-      {
-        "id": "C",
-        "text": "Sunflowers"
-      },
-      {
-        "id": "D",
-        "text": "Roses"
-      }
+      "Tulips",
+      "Lilies",
+      "Sunflowers",
+      "Roses"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 18,
-    "level": "echo",
-    "question": "Which color combination do I love?",
+    "level": 2,
+    "prompt": "Which color combination do I love?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Black and red"
-      },
-      {
-        "id": "B",
-        "text": "Blue and white"
-      },
-      {
-        "id": "C",
-        "text": "Purple and moss green"
-      },
-      {
-        "id": "D",
-        "text": "Pink and cream"
-      }
+      "Black and red",
+      "Blue and white",
+      "Purple and moss green",
+      "Pink and cream"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 19,
-    "level": "echo",
-    "question": "Which platform do I spend the most time on?",
+    "level": 2,
+    "prompt": "Which platform do I spend the most time on?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Pinterest"
-      },
-      {
-        "id": "B",
-        "text": "YouTube"
-      },
-      {
-        "id": "C",
-        "text": "TikTok"
-      },
-      {
-        "id": "D",
-        "text": "Instagram"
-      }
+      "Pinterest",
+      "YouTube",
+      "TikTok",
+      "Instagram"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 20,
-    "level": "echo",
-    "question": "Who would I most want to spend time with?",
+    "level": 2,
+    "prompt": "Who would I most want to spend time with?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Someone I love"
-      },
-      {
-        "id": "B",
-        "text": "Nobody at all"
-      },
-      {
-        "id": "C",
-        "text": "A big group of friends"
-      },
-      {
-        "id": "D",
-        "text": "New people"
-      }
+      "Someone I love",
+      "Nobody at all",
+      "A big group of friends",
+      "New people"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 21,
-    "level": "veil",
-    "question": "How am I when I talk about something important?",
+    "level": 3,
+    "prompt": "How am I when I talk about something important?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Serious"
-      },
-      {
-        "id": "B",
-        "text": "Indifferent"
-      },
-      {
-        "id": "C",
-        "text": "Playful"
-      },
-      {
-        "id": "D",
-        "text": "Shy"
-      }
+      "Serious",
+      "Indifferent",
+      "Playful",
+      "Shy"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 22,
-    "level": "veil",
-    "question": "What do I usually do when someone upsets me?",
+    "level": 3,
+    "prompt": "What do I usually do when someone upsets me?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Confront them immediately"
-      },
-      {
-        "id": "B",
-        "text": "Ask others for advice"
-      },
-      {
-        "id": "C",
-        "text": "I distance myself"
-      },
-      {
-        "id": "D",
-        "text": "Pretend nothing happened"
-      }
+      "Confront them immediately",
+      "Ask others for advice",
+      "I distance myself",
+      "Pretend nothing happened"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 23,
-    "level": "veil",
-    "question": "When something painful happens to me, what do I want?",
+    "level": 3,
+    "prompt": "When something painful happens to me, what do I want?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Everyone to comfort me"
-      },
-      {
-        "id": "B",
-        "text": "To tell everyone"
-      },
-      {
-        "id": "C",
-        "text": "For nobody to notice"
-      },
-      {
-        "id": "D",
-        "text": "To receive constant attention"
-      }
+      "Everyone to comfort me",
+      "To tell everyone",
+      "For nobody to notice",
+      "To receive constant attention"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 24,
-    "level": "veil",
-    "question": "What hurts me most?",
+    "level": 3,
+    "prompt": "What hurts me most?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Receiving advice"
-      },
-      {
-        "id": "B",
-        "text": "Having my freedom restricted"
-      },
-      {
-        "id": "C",
-        "text": "Making plans"
-      },
-      {
-        "id": "D",
-        "text": "Being alone"
-      }
+      "Receiving advice",
+      "Having my freedom restricted",
+      "Making plans",
+      "Being alone"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 25,
-    "level": "veil",
-    "question": "What do I do if someone asks for another chance?",
+    "level": 3,
+    "prompt": "What do I do if someone asks for another chance?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "I give one if they genuinely ask; otherwise, I cut them off"
-      },
-      {
-        "id": "B",
-        "text": "I always say yes"
-      },
-      {
-        "id": "C",
-        "text": "I always say no"
-      },
-      {
-        "id": "D",
-        "text": "I ask someone else to decide"
-      }
+      "I give one if they genuinely ask; otherwise, I cut them off",
+      "I always say yes",
+      "I always say no",
+      "I ask someone else to decide"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 26,
-    "level": "veil",
-    "question": "What do I do when something is bothering me?",
+    "level": 3,
+    "prompt": "What do I do when something is bothering me?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "I dig into it even more"
-      },
-      {
-        "id": "B",
-        "text": "I ignore it"
-      },
-      {
-        "id": "C",
-        "text": "I forget it quickly"
-      },
-      {
-        "id": "D",
-        "text": "I distract myself"
-      }
+      "I dig into it even more",
+      "I ignore it",
+      "I forget it quickly",
+      "I distract myself"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 27,
-    "level": "veil",
-    "question": "How might I jokingly describe myself?",
+    "level": 3,
+    "prompt": "How might I jokingly describe myself?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Always serious"
-      },
-      {
-        "id": "B",
-        "text": "Spoiled as fuck"
-      },
-      {
-        "id": "C",
-        "text": "Quiet and reserved"
-      },
-      {
-        "id": "D",
-        "text": "Easy to please"
-      }
+      "Always serious",
+      "Spoiled as fuck",
+      "Quiet and reserved",
+      "Easy to please"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 28,
-    "level": "veil",
-    "question": "What might be hidden behind my unusual behavior?",
+    "level": 3,
+    "prompt": "What might be hidden behind my unusual behavior?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "A desire for attention"
-      },
-      {
-        "id": "B",
-        "text": "Anger"
-      },
-      {
-        "id": "C",
-        "text": "A joke"
-      },
-      {
-        "id": "D",
-        "text": "A cry for help"
-      }
+      "A desire for attention",
+      "Anger",
+      "A joke",
+      "A cry for help"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 29,
-    "level": "veil",
-    "question": "What do I do in a group where I feel uncomfortable?",
+    "level": 3,
+    "prompt": "What do I do in a group where I feel uncomfortable?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "I become the center of attention"
-      },
-      {
-        "id": "B",
-        "text": "I force myself to stay"
-      },
-      {
-        "id": "C",
-        "text": "I start talking to everyone"
-      },
-      {
-        "id": "D",
-        "text": "I don't join in"
-      }
+      "I become the center of attention",
+      "I force myself to stay",
+      "I start talking to everyone",
+      "I don't join in"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 30,
-    "level": "veil",
-    "question": "How do I describe my fixed habits?",
+    "level": 3,
+    "prompt": "How do I describe my fixed habits?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "I never change my habits"
-      },
-      {
-        "id": "B",
-        "text": "I need the same schedule daily"
-      },
-      {
-        "id": "C",
-        "text": "I follow a strict routine"
-      },
-      {
-        "id": "D",
-        "text": "I don't really have any"
-      }
+      "I never change my habits",
+      "I need the same schedule daily",
+      "I follow a strict routine",
+      "I don't really have any"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 31,
-    "level": "abyss",
-    "question": "What do I need from someone who sees my vulnerable side?",
+    "level": 4,
+    "prompt": "What do I need from someone who sees my vulnerable side?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "They tell everyone"
-      },
-      {
-        "id": "B",
-        "text": "They ask me to hide it"
-      },
-      {
-        "id": "C",
-        "text": "They offer quick solutions"
-      },
-      {
-        "id": "D",
-        "text": "Never mock it; try to understand it"
-      }
+      "They tell everyone",
+      "They ask me to hide it",
+      "They offer quick solutions",
+      "Never mock it; try to understand it"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 32,
-    "level": "abyss",
-    "question": "What would hurt me in a relationship?",
+    "level": 4,
+    "prompt": "What would hurt me in a relationship?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Not receiving the same care I've given someone I love"
-      },
-      {
-        "id": "B",
-        "text": "They don't agree with me"
-      },
-      {
-        "id": "C",
-        "text": "They don't buy me gifts"
-      },
-      {
-        "id": "D",
-        "text": "They need time alone"
-      }
+      "Not receiving the same care I've given someone I love",
+      "They don't agree with me",
+      "They don't buy me gifts",
+      "They need time alone"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 33,
-    "level": "abyss",
-    "question": "Which emotions might I struggle with in love?",
+    "level": 4,
+    "prompt": "Which emotions might I struggle with in love?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Calm and certainty"
-      },
-      {
-        "id": "B",
-        "text": "Indifference and relief"
-      },
-      {
-        "id": "C",
-        "text": "Jealousy, self-blame, and fear of abandonment"
-      },
-      {
-        "id": "D",
-        "text": "Excitement and confidence"
-      }
+      "Calm and certainty",
+      "Indifference and relief",
+      "Jealousy, self-blame, and fear of abandonment",
+      "Excitement and confidence"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 34,
-    "level": "abyss",
-    "question": "How do I want to be accepted?",
+    "level": 4,
+    "prompt": "How do I want to be accepted?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Only when I'm cheerful"
-      },
-      {
-        "id": "B",
-        "text": "Exactly as I am, even at my worst"
-      },
-      {
-        "id": "C",
-        "text": "Only if I change"
-      },
-      {
-        "id": "D",
-        "text": "Only when I succeed"
-      }
+      "Only when I'm cheerful",
+      "Exactly as I am, even at my worst",
+      "Only if I change",
+      "Only when I succeed"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 35,
-    "level": "abyss",
-    "question": "What matters after someone hurts me?",
+    "level": 4,
+    "prompt": "What matters after someone hurts me?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "They ask for forgiveness and stay to rebuild things"
-      },
-      {
-        "id": "B",
-        "text": "They act like nothing happened"
-      },
-      {
-        "id": "C",
-        "text": "They blame someone else"
-      },
-      {
-        "id": "D",
-        "text": "They leave me alone"
-      }
+      "They ask for forgiveness and stay to rebuild things",
+      "They act like nothing happened",
+      "They blame someone else",
+      "They leave me alone"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 36,
-    "level": "abyss",
-    "question": "Which question about my future stays with me?",
+    "level": 4,
+    "prompt": "Which question about my future stays with me?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Will I become famous?"
-      },
-      {
-        "id": "B",
-        "text": "Will I reach the life I've always wanted?"
-      },
-      {
-        "id": "C",
-        "text": "Will I travel enough?"
-      },
-      {
-        "id": "D",
-        "text": "Will everyone approve of me?"
-      }
+      "Will I become famous?",
+      "Will I reach the life I've always wanted?",
+      "Will I travel enough?",
+      "Will everyone approve of me?"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 37,
-    "level": "abyss",
-    "question": "Which contradiction describes me in love?",
+    "level": 4,
+    "prompt": "Which contradiction describes me in love?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "I want someone to control my life"
-      },
-      {
-        "id": "B",
-        "text": "I want complete solitude"
-      },
-      {
-        "id": "C",
-        "text": "I never want commitment"
-      },
-      {
-        "id": "D",
-        "text": "I want freedom, but I also want to belong with someone"
-      }
+      "I want someone to control my life",
+      "I want complete solitude",
+      "I never want commitment",
+      "I want freedom, but I also want to belong with someone"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 38,
-    "level": "abyss",
-    "question": "What do I need when I ask for space?",
+    "level": 4,
+    "prompt": "What do I need when I ask for space?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Someone to make decisions for me"
-      },
-      {
-        "id": "B",
-        "text": "A long explanation"
-      },
-      {
-        "id": "C",
-        "text": "Constant messages"
-      },
-      {
-        "id": "D",
-        "text": "To be left alone"
-      }
+      "Someone to make decisions for me",
+      "A long explanation",
+      "Constant messages",
+      "To be left alone"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 39,
-    "level": "abyss",
-    "question": "How can someone earn my trust?",
+    "level": 4,
+    "prompt": "How can someone earn my trust?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Immediate intimacy"
-      },
-      {
-        "id": "B",
-        "text": "Through consistent, reliable behavior"
-      },
-      {
-        "id": "C",
-        "text": "Big promises"
-      },
-      {
-        "id": "D",
-        "text": "Expensive gifts"
-      }
+      "Immediate intimacy",
+      "Through consistent, reliable behavior",
+      "Big promises",
+      "Expensive gifts"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 40,
-    "level": "abyss",
-    "question": "Which betrayal would hurt me most?",
+    "level": 4,
+    "prompt": "Which betrayal would hurt me most?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "A canceled date"
-      },
-      {
-        "id": "B",
-        "text": "Using my wounds against me and stabbing me in the back"
-      },
-      {
-        "id": "C",
-        "text": "Being forgotten on a special day"
-      },
-      {
-        "id": "D",
-        "text": "A small disagreement"
-      }
+      "A canceled date",
+      "Using my wounds against me and stabbing me in the back",
+      "Being forgotten on a special day",
+      "A small disagreement"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 41,
-    "level": "void",
-    "question": "Which behavior hurts me even when someone understands my words?",
+    "level": 5,
+    "prompt": "Which behavior hurts me even when someone understands my words?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "They ask questions"
-      },
-      {
-        "id": "B",
-        "text": "They understand, but act as if they don't"
-      },
-      {
-        "id": "C",
-        "text": "They need time to think"
-      },
-      {
-        "id": "D",
-        "text": "They argue with me openly"
-      }
+      "They ask questions",
+      "They understand, but act as if they don't",
+      "They need time to think",
+      "They argue with me openly"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 42,
-    "level": "void",
-    "question": "What pushes me away from someone?",
+    "level": 5,
+    "prompt": "What pushes me away from someone?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Quiet confidence and honesty"
-      },
-      {
-        "id": "B",
-        "text": "Needing personal space"
-      },
-      {
-        "id": "C",
-        "text": "Having different interests"
-      },
-      {
-        "id": "D",
-        "text": "Unjustified pride and indifference"
-      }
+      "Quiet confidence and honesty",
+      "Needing personal space",
+      "Having different interests",
+      "Unjustified pride and indifference"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 43,
-    "level": "void",
-    "question": "What's one of my greatest fears about people I love?",
+    "level": 5,
+    "prompt": "What's one of my greatest fears about people I love?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Failing at work"
-      },
-      {
-        "id": "B",
-        "text": "Being alone forever"
-      },
-      {
-        "id": "C",
-        "text": "Losing my independence"
-      },
-      {
-        "id": "D",
-        "text": "Hurting and disappointing them until they leave"
-      }
+      "Failing at work",
+      "Being alone forever",
+      "Losing my independence",
+      "Hurting and disappointing them until they leave"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 44,
-    "level": "void",
-    "question": "What makes forgiveness feel bitter to me?",
+    "level": 5,
+    "prompt": "What makes forgiveness feel bitter to me?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Someone exploiting it and mistaking it for stupidity"
-      },
-      {
-        "id": "B",
-        "text": "They respect my boundaries"
-      },
-      {
-        "id": "C",
-        "text": "They admit their mistake"
-      },
-      {
-        "id": "D",
-        "text": "They give me time"
-      }
+      "Someone exploiting it and mistaking it for stupidity",
+      "They respect my boundaries",
+      "They admit their mistake",
+      "They give me time"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 45,
-    "level": "void",
-    "question": "What would mean a lot to me in a relationship?",
+    "level": 5,
+    "prompt": "What would mean a lot to me in a relationship?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "They praise me publicly"
-      },
-      {
-        "id": "B",
-        "text": "Someone compromising for me and forgiving me"
-      },
-      {
-        "id": "C",
-        "text": "They always agree with me"
-      },
-      {
-        "id": "D",
-        "text": "They buy me things"
-      }
+      "They praise me publicly",
+      "Someone compromising for me and forgiving me",
+      "They always agree with me",
+      "They buy me things"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 46,
-    "level": "void",
-    "question": "What do I dislike people assuming about my kindness?",
+    "level": 5,
+    "prompt": "What do I dislike people assuming about my kindness?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "That I hate everyone"
-      },
-      {
-        "id": "B",
-        "text": "That I value everyone equally"
-      },
-      {
-        "id": "C",
-        "text": "That I'm always pretending"
-      },
-      {
-        "id": "D",
-        "text": "That I never care about anyone"
-      }
+      "That I hate everyone",
+      "That I value everyone equally",
+      "That I'm always pretending",
+      "That I never care about anyone"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 47,
-    "level": "void",
-    "question": "How do I choose when I truly love someone?",
+    "level": 5,
+    "prompt": "How do I choose when I truly love someone?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "I avoid choosing anyone"
-      },
-      {
-        "id": "B",
-        "text": "I keep everyone as an option"
-      },
-      {
-        "id": "C",
-        "text": "I switch whenever things get hard"
-      },
-      {
-        "id": "D",
-        "text": "I keep choosing that one person"
-      }
+      "I avoid choosing anyone",
+      "I keep everyone as an option",
+      "I switch whenever things get hard",
+      "I keep choosing that one person"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 48,
-    "level": "void",
-    "question": "Which statement sounds most like me?",
+    "level": 5,
+    "prompt": "Which statement sounds most like me?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "I forgive instantly and forget"
-      },
-      {
-        "id": "B",
-        "text": "I never take anything seriously"
-      },
-      {
-        "id": "C",
-        "text": "I'm hard to put up with, and harder to understand"
-      },
-      {
-        "id": "D",
-        "text": "I'm easy to read"
-      }
+      "I forgive instantly and forget",
+      "I never take anything seriously",
+      "I'm hard to put up with, and harder to understand",
+      "I'm easy to read"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 49,
-    "level": "void",
-    "question": "When do I fight for someone?",
+    "level": 5,
+    "prompt": "When do I fight for someone?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "I fight for everyone equally"
-      },
-      {
-        "id": "B",
-        "text": "I never get attached"
-      },
-      {
-        "id": "C",
-        "text": "I always walk away"
-      },
-      {
-        "id": "D",
-        "text": "Only when I love them; otherwise I don't care"
-      }
+      "I fight for everyone equally",
+      "I never get attached",
+      "I always walk away",
+      "Only when I love them; otherwise I don't care"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 50,
-    "level": "void",
-    "question": "What would convince me someone doesn't love me?",
+    "level": 5,
+    "prompt": "What would convince me someone doesn't love me?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "They knowingly hurt me and feel no remorse"
-      },
-      {
-        "id": "B",
-        "text": "They disagree with me"
-      },
-      {
-        "id": "C",
-        "text": "They forget one message"
-      },
-      {
-        "id": "D",
-        "text": "They need space"
-      }
+      "They knowingly hurt me and feel no remorse",
+      "They disagree with me",
+      "They forget one message",
+      "They need space"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 51,
-    "level": "bloom",
-    "question": "What color sky do I like?",
+    "level": 1,
+    "prompt": "What color sky do I like?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Only gray skies"
-      },
-      {
-        "id": "B",
-        "text": "Only blue skies"
-      },
-      {
-        "id": "C",
-        "text": "Any color"
-      },
-      {
-        "id": "D",
-        "text": "Only pink skies"
-      }
+      "Only gray skies",
+      "Only blue skies",
+      "Any color",
+      "Only pink skies"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 52,
-    "level": "bloom",
-    "question": "Which music genre do I like?",
+    "level": 1,
+    "prompt": "Which music genre do I like?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Hip-hop"
-      },
-      {
-        "id": "B",
-        "text": "Pop"
-      },
-      {
-        "id": "C",
-        "text": "Jazz"
-      },
-      {
-        "id": "D",
-        "text": "Rock"
-      }
+      "Hip-hop",
+      "Pop",
+      "Jazz",
+      "Rock"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 53,
-    "level": "bloom",
-    "question": "What kind of city would I want to live in?",
+    "level": 1,
+    "prompt": "What kind of city would I want to live in?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "A busy seaside city"
-      },
-      {
-        "id": "B",
-        "text": "A crowded capital"
-      },
-      {
-        "id": "C",
-        "text": "A remote desert town"
-      },
-      {
-        "id": "D",
-        "text": "A quiet city close to nature"
-      }
+      "A busy seaside city",
+      "A crowded capital",
+      "A remote desert town",
+      "A quiet city close to nature"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 54,
-    "level": "bloom",
-    "question": "What would I like for a pet-related living arrangement?",
+    "level": 1,
+    "prompt": "What would I like for a pet-related living arrangement?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Keeping pets completely separate"
-      },
-      {
-        "id": "B",
-        "text": "My pet and my partner's pet living together"
-      },
-      {
-        "id": "C",
-        "text": "Not having pets at all"
-      },
-      {
-        "id": "D",
-        "text": "Only adopting one pet"
-      }
+      "Keeping pets completely separate",
+      "My pet and my partner's pet living together",
+      "Not having pets at all",
+      "Only adopting one pet"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 55,
-    "level": "bloom",
-    "question": "What's my ideal way to spend a free day?",
+    "level": 1,
+    "prompt": "What's my ideal way to spend a free day?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Go to a loud party"
-      },
-      {
-        "id": "B",
-        "text": "Stay home and watch movies"
-      },
-      {
-        "id": "C",
-        "text": "Shop all day"
-      },
-      {
-        "id": "D",
-        "text": "Travel without a plan"
-      }
+      "Go to a loud party",
+      "Stay home and watch movies",
+      "Shop all day",
+      "Travel without a plan"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 56,
-    "level": "bloom",
-    "question": "Which books do I prefer?",
+    "level": 1,
+    "prompt": "Which books do I prefer?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Fantasy novels"
-      },
-      {
-        "id": "B",
-        "text": "Historical biographies"
-      },
-      {
-        "id": "C",
-        "text": "Psychology books"
-      },
-      {
-        "id": "D",
-        "text": "Cookbooks"
-      }
+      "Fantasy novels",
+      "Historical biographies",
+      "Psychology books",
+      "Cookbooks"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 57,
-    "level": "bloom",
-    "question": "Where would I like to take a walk?",
+    "level": 1,
+    "prompt": "Where would I like to take a walk?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Morning markets"
-      },
-      {
-        "id": "B",
-        "text": "Busy shopping streets"
-      },
-      {
-        "id": "C",
-        "text": "Quiet streets at night"
-      },
-      {
-        "id": "D",
-        "text": "Crowded parks"
-      }
+      "Morning markets",
+      "Busy shopping streets",
+      "Quiet streets at night",
+      "Crowded parks"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 58,
-    "level": "bloom",
-    "question": "Which fictional world appeals to me?",
+    "level": 1,
+    "prompt": "Which fictional world appeals to me?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "A realistic modern city"
-      },
-      {
-        "id": "B",
-        "text": "A medieval fantasy world"
-      },
-      {
-        "id": "C",
-        "text": "A science-fiction world"
-      },
-      {
-        "id": "D",
-        "text": "An ancient kingdom"
-      }
+      "A realistic modern city",
+      "A medieval fantasy world",
+      "A science-fiction world",
+      "An ancient kingdom"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 59,
-    "level": "bloom",
-    "question": "Which physical activity interests me?",
+    "level": 1,
+    "prompt": "Which physical activity interests me?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Ballet"
-      },
-      {
-        "id": "B",
-        "text": "Swimming"
-      },
-      {
-        "id": "C",
-        "text": "Martial arts"
-      },
-      {
-        "id": "D",
-        "text": "Cycling"
-      }
+      "Ballet",
+      "Swimming",
+      "Martial arts",
+      "Cycling"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 60,
-    "level": "bloom",
-    "question": "What kind of gift would make me happiest?",
+    "level": 1,
+    "prompt": "What kind of gift would make me happiest?",
+    "emoji": "🌸",
     "options": [
-      {
-        "id": "A",
-        "text": "Something I've wanted for a long time"
-      },
-      {
-        "id": "B",
-        "text": "A practical household item"
-      },
-      {
-        "id": "C",
-        "text": "A surprise party"
-      },
-      {
-        "id": "D",
-        "text": "The most expensive thing"
-      }
+      "Something I've wanted for a long time",
+      "A practical household item",
+      "A surprise party",
+      "The most expensive thing"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 61,
-    "level": "echo",
-    "question": "What do I do when someone never approaches me on their own?",
+    "level": 2,
+    "prompt": "What do I do when someone never approaches me on their own?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Nothing special; it doesn't matter to me"
-      },
-      {
-        "id": "B",
-        "text": "I ask others to intervene"
-      },
-      {
-        "id": "C",
-        "text": "I chase them"
-      },
-      {
-        "id": "D",
-        "text": "I confront them"
-      }
+      "Nothing special; it doesn't matter to me",
+      "I ask others to intervene",
+      "I chase them",
+      "I confront them"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 62,
-    "level": "echo",
-    "question": "What do I do when something is on my mind?",
+    "level": 2,
+    "prompt": "What do I do when something is on my mind?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "I immediately forget it"
-      },
-      {
-        "id": "B",
-        "text": "I post about it"
-      },
-      {
-        "id": "C",
-        "text": "Think it through"
-      },
-      {
-        "id": "D",
-        "text": "I ask everyone for opinions"
-      }
+      "I immediately forget it",
+      "I post about it",
+      "Think it through",
+      "I ask everyone for opinions"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 63,
-    "level": "echo",
-    "question": "How do I handle waiting?",
+    "level": 2,
+    "prompt": "How do I handle waiting?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "I complain nonstop"
-      },
-      {
-        "id": "B",
-        "text": "I give up waiting"
-      },
-      {
-        "id": "C",
-        "text": "I check the clock constantly"
-      },
-      {
-        "id": "D",
-        "text": "I keep myself busy"
-      }
+      "I complain nonstop",
+      "I give up waiting",
+      "I check the clock constantly",
+      "I keep myself busy"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 64,
-    "level": "echo",
-    "question": "What's my first reaction when someone disagrees with me?",
+    "level": 2,
+    "prompt": "What's my first reaction when someone disagrees with me?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "I stop listening"
-      },
-      {
-        "id": "B",
-        "text": "I try to understand why"
-      },
-      {
-        "id": "C",
-        "text": "I assume they're wrong"
-      },
-      {
-        "id": "D",
-        "text": "I argue to win"
-      }
+      "I stop listening",
+      "I try to understand why",
+      "I assume they're wrong",
+      "I argue to win"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 65,
-    "level": "echo",
-    "question": "How do I respond to valid criticism?",
+    "level": 2,
+    "prompt": "How do I respond to valid criticism?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "I reject it immediately"
-      },
-      {
-        "id": "B",
-        "text": "I get defensive forever"
-      },
-      {
-        "id": "C",
-        "text": "I agree without listening"
-      },
-      {
-        "id": "D",
-        "text": "I accept it and say I'll think about it"
-      }
+      "I reject it immediately",
+      "I get defensive forever",
+      "I agree without listening",
+      "I accept it and say I'll think about it"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 66,
-    "level": "echo",
-    "question": "What do I do when several difficult things happen at once?",
+    "level": 2,
+    "prompt": "What do I do when several difficult things happen at once?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Prioritize them"
-      },
-      {
-        "id": "B",
-        "text": "I ignore everything"
-      },
-      {
-        "id": "C",
-        "text": "I panic and freeze"
-      },
-      {
-        "id": "D",
-        "text": "I let others choose"
-      }
+      "Prioritize them",
+      "I ignore everything",
+      "I panic and freeze",
+      "I let others choose"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 67,
-    "level": "echo",
-    "question": "How do I feel if an exciting plan gets canceled?",
+    "level": 2,
+    "prompt": "How do I feel if an exciting plan gets canceled?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Angry"
-      },
-      {
-        "id": "B",
-        "text": "Completely indifferent"
-      },
-      {
-        "id": "C",
-        "text": "Excited"
-      },
-      {
-        "id": "D",
-        "text": "Relieved"
-      }
+      "Angry",
+      "Completely indifferent",
+      "Excited",
+      "Relieved"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 68,
-    "level": "echo",
-    "question": "Who usually knows about my private problems?",
+    "level": 2,
+    "prompt": "Who usually knows about my private problems?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Everyone online"
-      },
-      {
-        "id": "B",
-        "text": "All my friends"
-      },
-      {
-        "id": "C",
-        "text": "Anyone who asks"
-      },
-      {
-        "id": "D",
-        "text": "Usually nobody; at most one or two people if needed"
-      }
+      "Everyone online",
+      "All my friends",
+      "Anyone who asks",
+      "Usually nobody; at most one or two people if needed"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 69,
-    "level": "echo",
-    "question": "What do I rely on most when making decisions?",
+    "level": 2,
+    "prompt": "What do I rely on most when making decisions?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "Pure instinct"
-      },
-      {
-        "id": "B",
-        "text": "Random chance"
-      },
-      {
-        "id": "C",
-        "text": "Logical analysis"
-      },
-      {
-        "id": "D",
-        "text": "Other people's opinions"
-      }
+      "Pure instinct",
+      "Random chance",
+      "Logical analysis",
+      "Other people's opinions"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 70,
-    "level": "echo",
-    "question": "What do I do if someone's behavior confuses me?",
+    "level": 2,
+    "prompt": "What do I do if someone's behavior confuses me?",
+    "emoji": "🫧",
     "options": [
-      {
-        "id": "A",
-        "text": "I guess their motives"
-      },
-      {
-        "id": "B",
-        "text": "I avoid them forever"
-      },
-      {
-        "id": "C",
-        "text": "Ask them directly"
-      },
-      {
-        "id": "D",
-        "text": "I ask their friends"
-      }
+      "I guess their motives",
+      "I avoid them forever",
+      "Ask them directly",
+      "I ask their friends"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 71,
-    "level": "veil",
-    "question": "What would I refuse to do just to express love?",
+    "level": 3,
+    "prompt": "What would I refuse to do just to express love?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Change who I am"
-      },
-      {
-        "id": "B",
-        "text": "Agree with everything"
-      },
-      {
-        "id": "C",
-        "text": "Give up my goals"
-      },
-      {
-        "id": "D",
-        "text": "Never spend time alone"
-      }
+      "Change who I am",
+      "Agree with everything",
+      "Give up my goals",
+      "Never spend time alone"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 72,
-    "level": "veil",
-    "question": "What if my partner needs more personal space?",
+    "level": 3,
+    "prompt": "What if my partner needs more personal space?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "I forbid it"
-      },
-      {
-        "id": "B",
-        "text": "I disappear without talking"
-      },
-      {
-        "id": "C",
-        "text": "I understand, as long as they explain and ask for it"
-      },
-      {
-        "id": "D",
-        "text": "I take it personally immediately"
-      }
+      "I forbid it",
+      "I disappear without talking",
+      "I understand, as long as they explain and ask for it",
+      "I take it personally immediately"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 73,
-    "level": "veil",
-    "question": "What damages my trust?",
+    "level": 3,
+    "prompt": "What damages my trust?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "An honest disagreement"
-      },
-      {
-        "id": "B",
-        "text": "Different hobbies"
-      },
-      {
-        "id": "C",
-        "text": "Someone breaking their promises"
-      },
-      {
-        "id": "D",
-        "text": "Needing time alone"
-      }
+      "An honest disagreement",
+      "Different hobbies",
+      "Someone breaking their promises",
+      "Needing time alone"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 74,
-    "level": "veil",
-    "question": "What do I need before forgiving someone?",
+    "level": 3,
+    "prompt": "What do I need before forgiving someone?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "A public post"
-      },
-      {
-        "id": "B",
-        "text": "Pretending nothing happened"
-      },
-      {
-        "id": "C",
-        "text": "Genuine remorse and a request for forgiveness"
-      },
-      {
-        "id": "D",
-        "text": "An expensive apology gift"
-      }
+      "A public post",
+      "Pretending nothing happened",
+      "Genuine remorse and a request for forgiveness",
+      "An expensive apology gift"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 75,
-    "level": "veil",
-    "question": "What do I do when I want to text someone?",
+    "level": 3,
+    "prompt": "What do I do when I want to text someone?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Text them, unless I know they don't want to talk"
-      },
-      {
-        "id": "B",
-        "text": "I ask a mutual friend"
-      },
-      {
-        "id": "C",
-        "text": "I never text first"
-      },
-      {
-        "id": "D",
-        "text": "I always wait for them"
-      }
+      "Text them, unless I know they don't want to talk",
+      "I ask a mutual friend",
+      "I never text first",
+      "I always wait for them"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 76,
-    "level": "veil",
-    "question": "What shows me someone will really stay?",
+    "level": 3,
+    "prompt": "What shows me someone will really stay?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "They see me at my worst and still stay"
-      },
-      {
-        "id": "B",
-        "text": "They promise grand gestures"
-      },
-      {
-        "id": "C",
-        "text": "They avoid hard conversations"
-      },
-      {
-        "id": "D",
-        "text": "They only stay when I'm happy"
-      }
+      "They see me at my worst and still stay",
+      "They promise grand gestures",
+      "They avoid hard conversations",
+      "They only stay when I'm happy"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 77,
-    "level": "veil",
-    "question": "What do I do when a relationship has a problem?",
+    "level": 3,
+    "prompt": "What do I do when a relationship has a problem?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Talk about it; leave if it can't be resolved"
-      },
-      {
-        "id": "B",
-        "text": "I ignore the issue"
-      },
-      {
-        "id": "C",
-        "text": "I silently endure it"
-      },
-      {
-        "id": "D",
-        "text": "I ask others to fix it"
-      }
+      "Talk about it; leave if it can't be resolved",
+      "I ignore the issue",
+      "I silently endure it",
+      "I ask others to fix it"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 78,
-    "level": "veil",
-    "question": "When does a repeated mistake become a deal-breaker?",
+    "level": 3,
+    "prompt": "When does a repeated mistake become a deal-breaker?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "When they make one honest mistake"
-      },
-      {
-        "id": "B",
-        "text": "When they apologize sincerely"
-      },
-      {
-        "id": "C",
-        "text": "When they know what they did, pretend otherwise, and make no amends"
-      },
-      {
-        "id": "D",
-        "text": "When they need more time"
-      }
+      "When they make one honest mistake",
+      "When they apologize sincerely",
+      "When they know what they did, pretend otherwise, and make no amends",
+      "When they need more time"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 79,
-    "level": "veil",
-    "question": "What's essential for me to stay in a relationship?",
+    "level": 3,
+    "prompt": "What's essential for me to stay in a relationship?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Always agreeing"
-      },
-      {
-        "id": "B",
-        "text": "Never arguing"
-      },
-      {
-        "id": "C",
-        "text": "Actually loving that person"
-      },
-      {
-        "id": "D",
-        "text": "Having identical hobbies"
-      }
+      "Always agreeing",
+      "Never arguing",
+      "Actually loving that person",
+      "Having identical hobbies"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 80,
-    "level": "veil",
-    "question": "What do I need my partner to respect without being told repeatedly?",
+    "level": 3,
+    "prompt": "What do I need my partner to respect without being told repeatedly?",
+    "emoji": "🪻",
     "options": [
-      {
-        "id": "A",
-        "text": "Constant reassurance"
-      },
-      {
-        "id": "B",
-        "text": "My independence and choices, without pressure"
-      },
-      {
-        "id": "C",
-        "text": "Permission for every choice"
-      },
-      {
-        "id": "D",
-        "text": "Total agreement"
-      }
+      "Constant reassurance",
+      "My independence and choices, without pressure",
+      "Permission for every choice",
+      "Total agreement"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 81,
-    "level": "abyss",
-    "question": "Which inner contradiction describes me?",
+    "level": 4,
+    "prompt": "Which inner contradiction describes me?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "I love being alone but also want someone always beside me"
-      },
-      {
-        "id": "B",
-        "text": "I dislike being alone"
-      },
-      {
-        "id": "C",
-        "text": "I always want crowds"
-      },
-      {
-        "id": "D",
-        "text": "I never need closeness"
-      }
+      "I love being alone but also want someone always beside me",
+      "I dislike being alone",
+      "I always want crowds",
+      "I never need closeness"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 82,
-    "level": "abyss",
-    "question": "What helps me let go of someone?",
+    "level": 4,
+    "prompt": "What helps me let go of someone?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Knowing they aren't interested in me"
-      },
-      {
-        "id": "B",
-        "text": "One disagreement"
-      },
-      {
-        "id": "C",
-        "text": "A single missed call"
-      },
-      {
-        "id": "D",
-        "text": "A busy week"
-      }
+      "Knowing they aren't interested in me",
+      "One disagreement",
+      "A single missed call",
+      "A busy week"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 83,
-    "level": "abyss",
-    "question": "How do I feel when I make a mistake?",
+    "level": 4,
+    "prompt": "How do I feel when I make a mistake?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "I blame everyone else"
-      },
-      {
-        "id": "B",
-        "text": "Upset with myself"
-      },
-      {
-        "id": "C",
-        "text": "I immediately forget it"
-      },
-      {
-        "id": "D",
-        "text": "I feel nothing"
-      }
+      "I blame everyone else",
+      "Upset with myself",
+      "I immediately forget it",
+      "I feel nothing"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 84,
-    "level": "abyss",
-    "question": "What would I rather know, even if it's painful?",
+    "level": 4,
+    "prompt": "What would I rather know, even if it's painful?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "The truth"
-      },
-      {
-        "id": "B",
-        "text": "Silence forever"
-      },
-      {
-        "id": "C",
-        "text": "A comforting lie"
-      },
-      {
-        "id": "D",
-        "text": "A vague answer"
-      }
+      "The truth",
+      "Silence forever",
+      "A comforting lie",
+      "A vague answer"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 85,
-    "level": "abyss",
-    "question": "What kind of agreement feels especially hurtful?",
+    "level": 4,
+    "prompt": "What kind of agreement feels especially hurtful?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "A different perspective"
-      },
-      {
-        "id": "B",
-        "text": "A request for clarification"
-      },
-      {
-        "id": "C",
-        "text": "Someone pretending to agree without understanding me"
-      },
-      {
-        "id": "D",
-        "text": "An honest disagreement"
-      }
+      "A different perspective",
+      "A request for clarification",
+      "Someone pretending to agree without understanding me",
+      "An honest disagreement"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 86,
-    "level": "abyss",
-    "question": "What if someone pulls away out of fear?",
+    "level": 4,
+    "prompt": "What if someone pulls away out of fear?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "I mock their fear"
-      },
-      {
-        "id": "B",
-        "text": "I talk with them about the fear and may continue"
-      },
-      {
-        "id": "C",
-        "text": "I force them to stay"
-      },
-      {
-        "id": "D",
-        "text": "I end it without talking"
-      }
+      "I mock their fear",
+      "I talk with them about the fear and may continue",
+      "I force them to stay",
+      "I end it without talking"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 87,
-    "level": "abyss",
-    "question": "What worries me about letting someone close?",
+    "level": 4,
+    "prompt": "What worries me about letting someone close?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Having separate hobbies"
-      },
-      {
-        "id": "B",
-        "text": "Receiving honest advice"
-      },
-      {
-        "id": "C",
-        "text": "Being disagreed with"
-      },
-      {
-        "id": "D",
-        "text": "Letting them influence me too much"
-      }
+      "Having separate hobbies",
+      "Receiving honest advice",
+      "Being disagreed with",
+      "Letting them influence me too much"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 88,
-    "level": "abyss",
-    "question": "How do I approach a truth that feels unfamiliar?",
+    "level": 4,
+    "prompt": "How do I approach a truth that feels unfamiliar?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "Pretend it doesn't exist"
-      },
-      {
-        "id": "B",
-        "text": "Ask others to decide"
-      },
-      {
-        "id": "C",
-        "text": "Look for similarities first, then accept it"
-      },
-      {
-        "id": "D",
-        "text": "Reject it instantly"
-      }
+      "Pretend it doesn't exist",
+      "Ask others to decide",
+      "Look for similarities first, then accept it",
+      "Reject it instantly"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 89,
-    "level": "abyss",
-    "question": "What's painful about someone's refusal to seek forgiveness?",
+    "level": 4,
+    "prompt": "What's painful about someone's refusal to seek forgiveness?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "They ask for space"
-      },
-      {
-        "id": "B",
-        "text": "They never even wanted to be forgiven"
-      },
-      {
-        "id": "C",
-        "text": "They need time to heal"
-      },
-      {
-        "id": "D",
-        "text": "They admit the mistake"
-      }
+      "They ask for space",
+      "They never even wanted to be forgiven",
+      "They need time to heal",
+      "They admit the mistake"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 90,
-    "level": "abyss",
-    "question": "What would I never change for a relationship?",
+    "level": 4,
+    "prompt": "What would I never change for a relationship?",
+    "emoji": "🌑",
     "options": [
-      {
-        "id": "A",
-        "text": "My daily schedule"
-      },
-      {
-        "id": "B",
-        "text": "My hairstyle"
-      },
-      {
-        "id": "C",
-        "text": "My core personality traits"
-      },
-      {
-        "id": "D",
-        "text": "My favorite restaurant"
-      }
+      "My daily schedule",
+      "My hairstyle",
+      "My core personality traits",
+      "My favorite restaurant"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 91,
-    "level": "void",
-    "question": "Who has seen my most authentic self?",
+    "level": 5,
+    "prompt": "Who has seen my most authentic self?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Everyone I've met"
-      },
-      {
-        "id": "B",
-        "text": "No one has ever seen any part of me"
-      },
-      {
-        "id": "C",
-        "text": "Only one person: someone I was in love with"
-      },
-      {
-        "id": "D",
-        "text": "Only my classmates"
-      }
+      "Everyone I've met",
+      "No one has ever seen any part of me",
+      "Only one person: someone I was in love with",
+      "Only my classmates"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 92,
-    "level": "void",
-    "question": "How far would I go for someone I truly love?",
+    "level": 5,
+    "prompt": "How far would I go for someone I truly love?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "I'd give my life without hesitation to make them feel better"
-      },
-      {
-        "id": "B",
-        "text": "I'd wait for someone else"
-      },
-      {
-        "id": "C",
-        "text": "I'd send a short message"
-      },
-      {
-        "id": "D",
-        "text": "I'd only help if convenient"
-      }
+      "I'd give my life without hesitation to make them feel better",
+      "I'd wait for someone else",
+      "I'd send a short message",
+      "I'd only help if convenient"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 93,
-    "level": "void",
-    "question": "What matters to me in how I treat loved ones?",
+    "level": 5,
+    "prompt": "What matters to me in how I treat loved ones?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Always agreeing with them"
-      },
-      {
-        "id": "B",
-        "text": "Buying them gifts"
-      },
-      {
-        "id": "C",
-        "text": "Never exploiting or betraying them"
-      },
-      {
-        "id": "D",
-        "text": "Avoiding difficult conversations"
-      }
+      "Always agreeing with them",
+      "Buying them gifts",
+      "Never exploiting or betraying them",
+      "Avoiding difficult conversations"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 94,
-    "level": "void",
-    "question": "What behavior destroys my sense of safety?",
+    "level": 5,
+    "prompt": "What behavior destroys my sense of safety?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Needing time alone"
-      },
-      {
-        "id": "B",
-        "text": "Disagreeing politely"
-      },
-      {
-        "id": "C",
-        "text": "Aggression"
-      },
-      {
-        "id": "D",
-        "text": "Being quiet"
-      }
+      "Needing time alone",
+      "Disagreeing politely",
+      "Aggression",
+      "Being quiet"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 95,
-    "level": "void",
-    "question": "What would make my dream life stop being my dream life?",
+    "level": 5,
+    "prompt": "What would make my dream life stop being my dream life?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Learning a new skill"
-      },
-      {
-        "id": "B",
-        "text": "Moving to a new city"
-      },
-      {
-        "id": "C",
-        "text": "Having to give up something I truly love"
-      },
-      {
-        "id": "D",
-        "text": "Changing my routine"
-      }
+      "Learning a new skill",
+      "Moving to a new city",
+      "Having to give up something I truly love",
+      "Changing my routine"
     ],
-    "correctAnswerId": "C"
+    "correctIndex": 2
   },
   {
     "id": 96,
-    "level": "void",
-    "question": "Why do I forgive people?",
+    "level": 5,
+    "prompt": "Why do I forgive people?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "To avoid an apology"
-      },
-      {
-        "id": "B",
-        "text": "So I don't carry resentment, not out of weakness or need"
-      },
-      {
-        "id": "C",
-        "text": "To get something back"
-      },
-      {
-        "id": "D",
-        "text": "To prove I'm better"
-      }
+      "To avoid an apology",
+      "So I don't carry resentment, not out of weakness or need",
+      "To get something back",
+      "To prove I'm better"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 97,
-    "level": "void",
-    "question": "How do love and trust develop for me?",
+    "level": 5,
+    "prompt": "How do love and trust develop for me?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "I fall out of love quickly"
-      },
-      {
-        "id": "B",
-        "text": "I trust immediately"
-      },
-      {
-        "id": "C",
-        "text": "I never trust anyone"
-      },
-      {
-        "id": "D",
-        "text": "I love steadily, but need a long time to trust"
-      }
+      "I fall out of love quickly",
+      "I trust immediately",
+      "I never trust anyone",
+      "I love steadily, but need a long time to trust"
     ],
-    "correctAnswerId": "D"
+    "correctIndex": 3
   },
   {
     "id": 98,
-    "level": "void",
-    "question": "When feelings and logic clash, what do I choose?",
+    "level": 5,
+    "prompt": "When feelings and logic clash, what do I choose?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "Whatever others prefer"
-      },
-      {
-        "id": "B",
-        "text": "What I believe is logically right"
-      },
-      {
-        "id": "C",
-        "text": "Whatever feels easiest"
-      },
-      {
-        "id": "D",
-        "text": "Whatever avoids conflict"
-      }
+      "Whatever others prefer",
+      "What I believe is logically right",
+      "Whatever feels easiest",
+      "Whatever avoids conflict"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   },
   {
     "id": 99,
-    "level": "void",
-    "question": "What if I discover a belief of mine was false?",
+    "level": 5,
+    "prompt": "What if I discover a belief of mine was false?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "I accept reality; a false belief has no value to me"
-      },
-      {
-        "id": "B",
-        "text": "I defend it at all costs"
-      },
-      {
-        "id": "C",
-        "text": "I hide the evidence"
-      },
-      {
-        "id": "D",
-        "text": "I refuse to reconsider"
-      }
+      "I accept reality; a false belief has no value to me",
+      "I defend it at all costs",
+      "I hide the evidence",
+      "I refuse to reconsider"
     ],
-    "correctAnswerId": "A"
+    "correctIndex": 0
   },
   {
     "id": 100,
-    "level": "void",
-    "question": "Which conflict about love and values feels most like me?",
+    "level": 5,
+    "prompt": "Which conflict about love and values feels most like me?",
+    "emoji": "🖤",
     "options": [
-      {
-        "id": "A",
-        "text": "I never need space in love"
-      },
-      {
-        "id": "B",
-        "text": "I can love someone and need distance while still following my values and goals"
-      },
-      {
-        "id": "C",
-        "text": "I abandon my goals for a partner"
-      },
-      {
-        "id": "D",
-        "text": "I always choose love over everything"
-      }
+      "I never need space in love",
+      "I can love someone and need distance while still following my values and goals",
+      "I abandon my goals for a partner",
+      "I always choose love over everything"
     ],
-    "correctAnswerId": "B"
+    "correctIndex": 1
   }
 ];
