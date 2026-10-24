@@ -1,3 +1,23 @@
-.button{border:1px solid var(--border);border-radius:999px;padding:.55rem 1.05rem;background:color-mix(in srgb,var(--accent) 12%,var(--panel));color:var(--text);font:inherit;font-size:.9rem;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:transform .2s,background .2s}
-.button:hover:not(:disabled){transform:translateY(-1px);background:color-mix(in srgb,var(--accent) 22%,var(--panel))}
-.button:disabled{opacity:.45;cursor:not-allowed}
+.button {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: .55rem 1.05rem;
+    background: color-mix(in srgb, var(--accent) 12%, var(--panel));
+    color: var(--text);
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    cursor: pointer;
+    transition: transform .2s, background .2s
+}
+
+.button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: color-mix(in srgb, var(--accent) 22%, var(--panel))
+}
+
+.button:disabled {
+    opacity: .45;
+    cursor: not-allowed
+}

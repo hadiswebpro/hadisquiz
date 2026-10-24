@@ -1,1 +1,16 @@
-.quiz{width:min(100%,720px);display:grid;gap:2rem}.quiz header{display:grid;gap:.6rem}.quiz header p{font-weight:700;letter-spacing:.12em;font-size:.85rem}
+.quiz {
+    width: min(100%, 720px);
+    display: grid;
+    gap: 2rem
+}
+
+.quiz header {
+    display: grid;
+    gap: .6rem
+}
+
+.quiz header p {
+    font-weight: 700;
+    letter-spacing: .12em;
+    font-size: .85rem
+}

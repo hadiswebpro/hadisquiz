@@ -1,11 +1,78 @@
-.app{min-height:100vh}
-.main{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:3.25rem 1rem 1.5rem}
-.notice{position:fixed;bottom:.7rem;left:50%;transform:translateX(-50%);background:var(--panel);padding:.65rem 1rem;border-radius:10px;max-width:90vw;z-index:10}
-@media(max-width:600px){.main{padding:3.5rem .75rem 1rem}}
+.app {
+    min-height: 100vh
+}
 
-.transitionVeil{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:0;background:var(--panel);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}
-.veilOut{animation:veilFadeOut .95s ease-in-out forwards}
-.veilIn{animation:veilFadeIn 1.05s ease-in-out forwards}
-@keyframes veilFadeOut{from{opacity:0;backdrop-filter:blur(0)}to{opacity:1;backdrop-filter:blur(15px)}}
-@keyframes veilFadeIn{from{opacity:1;backdrop-filter:blur(15px)}to{opacity:0;backdrop-filter:blur(0)}}
-@media(prefers-reduced-motion:reduce){.transitionVeil{display:none}}
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.25rem 1rem 1.5rem
+}
+
+.notice {
+    position: fixed;
+    bottom: .7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--panel);
+    padding: .65rem 1rem;
+    border-radius: 10px;
+    max-width: 90vw;
+    z-index: 10
+}
+
+@media(max-width:600px) {
+    .main {
+        padding: 3.5rem .75rem 1rem
+    }
+}
+
+.transitionVeil {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--panel);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px)
+}
+
+.veilOut {
+    animation: veilFadeOut .95s ease-in-out forwards
+}
+
+.veilIn {
+    animation: veilFadeIn 1.05s ease-in-out forwards
+}
+
+@keyframes veilFadeOut {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0)
+    }
+
+    to {
+        opacity: 1;
+        backdrop-filter: blur(15px)
+    }
+}
+
+@keyframes veilFadeIn {
+    from {
+        opacity: 1;
+        backdrop-filter: blur(15px)
+    }
+
+    to {
+        opacity: 0;
+        backdrop-filter: blur(0)
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .transitionVeil {
+        display: none
+    }
+}

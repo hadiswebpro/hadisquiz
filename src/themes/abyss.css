@@ -1,1 +1,11 @@
-.game-theme[data-theme="abyss"]{--scene:url("/hadisquiz/backgrounds/abbys.jpg");--text:#edf1fa;--accent:#91abd0;--progress:#7396c4;--panel:#1c2940d6;--border:#536782;--blur:6px;--shade:linear-gradient(145deg,#030a17a8,#101b34d6);background:#101b34}
+.game-theme[data-theme="abyss"] {
+    --scene: url("/hadisquiz/backgrounds/abbys.jpg");
+    --text: #edf1fa;
+    --accent: #91abd0;
+    --progress: #7396c4;
+    --panel: #1c2940d6;
+    --border: #536782;
+    --blur: 6px;
+    --shade: linear-gradient(145deg, #030a17a8, #101b34d6);
+    background: #101b34
+}

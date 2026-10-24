@@ -1,1 +1,11 @@
-.game-theme[data-theme="intro"]{--scene:url("/hadisquiz/backgrounds/intro.jpg");--text:#403b35;--accent:#d7aa61;--progress:#d7aa61;--panel:#fffaf0bd;--border:#e6cda8;--blur:2px;--shade:linear-gradient(135deg,#fffaf126,#fff0d71a);background:#fff6e9}
+.game-theme[data-theme="intro"] {
+    --scene: url("/hadisquiz/backgrounds/intro.jpg");
+    --text: #403b35;
+    --accent: #d7aa61;
+    --progress: #d7aa61;
+    --panel: #fffaf0bd;
+    --border: #e6cda8;
+    --blur: 2px;
+    --shade: linear-gradient(135deg, #fffaf126, #fff0d71a);
+    background: #fff6e9
+}

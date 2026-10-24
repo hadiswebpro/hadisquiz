@@ -1,1 +1,11 @@
-.game-theme[data-theme="veil"]{--scene:url("/hadisquiz/backgrounds/veil.jpg");--text:#292b45;--accent:#a99dcf;--progress:#a99dcf;--panel:#eeeaf4bf;--border:#a8a8c5;--blur:4px;--shade:linear-gradient(140deg,#e5e1f440,#968bb693);background:#dcd5eb}
+.game-theme[data-theme="veil"] {
+    --scene: url("/hadisquiz/backgrounds/veil.jpg");
+    --text: #292b45;
+    --accent: #a99dcf;
+    --progress: #a99dcf;
+    --panel: #eeeaf4bf;
+    --border: #a8a8c5;
+    --blur: 4px;
+    --shade: linear-gradient(140deg, #e5e1f440, #968bb693);
+    background: #dcd5eb
+}

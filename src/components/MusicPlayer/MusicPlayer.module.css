@@ -1,3 +1,28 @@
-.player{position:fixed;right:1rem;top:.8rem;z-index:40}
-.player button{display:grid;place-items:center;border:1px solid var(--border);border-radius:999px;width:38px;height:38px;background:var(--panel);color:var(--text);box-shadow:0 3px 14px #0000001c;backdrop-filter:blur(12px);cursor:pointer;font-size:1.15rem;line-height:1;opacity:1}
-.player button:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 15%,var(--panel))}
+.player {
+    position: fixed;
+    right: 1rem;
+    top: .8rem;
+    z-index: 40
+}
+
+.player button {
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    width: 38px;
+    height: 38px;
+    background: var(--panel);
+    color: var(--text);
+    box-shadow: 0 3px 14px #0000001c;
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    font-size: 1.15rem;
+    line-height: 1;
+    opacity: 1
+}
+
+.player button:hover {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 15%, var(--panel))
+}
