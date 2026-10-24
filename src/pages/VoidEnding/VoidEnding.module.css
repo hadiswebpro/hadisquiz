@@ -1,8 +1,12 @@
-.ending{width:min(100%,760px);text-align:center;padding:clamp(2rem,5vw,4rem);border:1px solid #a2a5b13d;border-radius:32px;background:#07080bd9;backdrop-filter:blur(24px);box-shadow:0 0 120px #c0c5df10;animation:arrive 2.6s ease both}
-.ending h1{font-size:clamp(2rem,6vw,4rem);letter-spacing:.16em;font-weight:400}
-.ending p{line-height:2;letter-spacing:.04em}
-.orbit{width:100px;height:100px;margin:0 auto 2.8rem;border:1px solid #c8c8df70;border-radius:50%;display:grid;place-items:center;font-size:2.4rem;box-shadow:0 0 50px #d5d3ef17;animation:quietGlow 9s ease-in-out infinite}
-.score{margin:2.5rem 0;font-weight:500;opacity:.7}
-@keyframes arrive{from{opacity:0;transform:translateY(18px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
-@keyframes quietGlow{50%{box-shadow:0 0 65px #d5d3ef30;transform:scale(1.025)}}
-@media(prefers-reduced-motion:reduce){.ending,.orbit{animation:none}}
+.finalScene{position:fixed;inset:0;z-index:30;display:grid;place-items:center;overflow-y:auto;padding:clamp(1rem,3vh,2rem);isolation:isolate}
+.darkness{position:fixed;inset:0;z-index:-1;background:#000;opacity:0;animation:fadeToNothing 5.5s ease-in-out 1.5s forwards;pointer-events:none}
+.ending{width:min(100%,590px);max-height:calc(100dvh - 2rem);overflow-y:auto;text-align:center;padding:clamp(1.2rem,3vw,2.2rem);border:1px solid #8b8d9d45;border-radius:22px;background:#090a0ddc;backdrop-filter:blur(16px);box-shadow:0 0 65px #a4a9d414;opacity:0;animation:revealLetter 2.6s ease 7s forwards}
+.ending h1{font-size:clamp(1.25rem,3.5vw,2rem);letter-spacing:.12em;font-weight:400;margin:.4rem 0 1rem}
+.ending p{font-size:clamp(.85rem,1.7vw,.98rem);line-height:1.7;letter-spacing:.02em;margin:.65rem 0}
+.eyebrow{font-size:.7rem!important;letter-spacing:.25em!important;opacity:.7}
+.spark{display:block;font-size:1.8rem;color:#e2e3eea3;margin-bottom:.3rem}
+.letter{margin:1.2rem auto!important;max-width:49ch;color:#f5f0f3}
+.score{margin:1rem 0;font-size:.75rem;opacity:.6}
+@keyframes fadeToNothing{0%{opacity:0}100%{opacity:1}}
+@keyframes revealLetter{from{opacity:0;transform:translateY(14px);filter:blur(7px)}to{opacity:1;transform:none;filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.darkness{animation:none;opacity:1}.ending{animation:none;opacity:1}}
