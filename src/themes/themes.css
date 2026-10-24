@@ -4,6 +4,6 @@
 .game-theme[data-theme="bloom"]{--accent:#ce86a6;--progress:#8db99a;--scene:url("/hadisquiz/backgrounds/bloom.jpg");--shade:linear-gradient(135deg,#fff2f2ba,#e2f2d5b0)}
 .game-theme[data-theme="echo"]{--accent:#7cb3d8;--progress:#7cb3d8;--text:#274357;--border:#a8c8df;--scene:url("/hadisquiz/backgrounds/echo.jpg");--shade:linear-gradient(140deg,#e6f8ffb8,#9bc9e8a6)}
 .game-theme[data-theme="veil"]{--accent:#a99dcf;--progress:#a99dcf;--text:#292b45;--border:#a8a8c5;--scene:url("/hadisquiz/backgrounds/veil.jpg");--shade:linear-gradient(140deg,#e5e1f4c7,#968bb6a6)}
-.game-theme[data-theme="abyss"]{--accent:#6c85a8;--progress:#7396c4;--text:#edf1fa;--panel:#1c2940df;--border:#536782;--scene:url("/hadisquiz/backgrounds/abyss.jpg");--shade:linear-gradient(145deg,#030a17c9,#101b34e3)}
+.game-theme[data-theme="abyss"]{--accent:#6c85a8;--progress:#7396c4;--text:#edf1fa;--panel:#1c2940df;--border:#536782;--scene:url("/hadisquiz/backgrounds/abbys.jpg");--shade:linear-gradient(145deg,#030a17c9,#101b34e3)}
 .game-theme[data-theme="void"]{--accent:#c9cbd7;--progress:#d7d9e5;--text:#f1f1f5;--panel:#15151fe0;--border:#676978;--scene:url("/hadisquiz/backgrounds/void.jpg");--shade:radial-gradient(ellipse at center,#0b0b1599,#000000f2 85%)}
 @media(prefers-reduced-motion:no-preference){.game-theme[data-theme="echo"]::after{animation:echoMist 12s ease-in-out infinite alternate}.game-theme[data-theme="veil"]::after{animation:veilMist 15s ease-in-out infinite alternate}@keyframes echoMist{to{opacity:.78}}@keyframes veilMist{to{opacity:.85}}}
