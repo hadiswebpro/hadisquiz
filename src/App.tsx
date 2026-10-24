@@ -53,7 +53,7 @@ export default function App(){
   setScores([]);setLevel(1);setRound([]);setGuess(50);setError("");setScreen("welcome");
  }
  const theme=screen==="welcome"||screen==="prediction"?"intro":levelThemes[level];
- return <ThemeProvider theme={theme}><div className={styles.app}><MusicPlayer/><main className={styles.main}>
+ return <ThemeProvider theme={theme}><div className={styles.app}><MusicPlayer theme={theme}/><main className={styles.main}>
   {screen==="welcome"&&<Welcome onStart={()=>setScreen("prediction")}/>}
   {screen==="prediction"&&<Prediction onContinue={value=>{setGuess(value);prepareLevel(1);}}/>}
   {error&&<p role="alert" className={styles.notice}>{error}</p>}
