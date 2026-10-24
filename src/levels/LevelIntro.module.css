@@ -1,0 +1,1 @@
+.intro{width:min(100%,680px);padding:2.5rem;text-align:center;background:var(--panel);border:1px solid var(--border);border-radius:28px;animation:appear .5s ease both;box-shadow:0 18px 60px #00000014}.intro h1{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:.08em}.intro p{line-height:1.8}.symbol{font-size:4rem}.rule{font-weight:700;color:var(--accent)}
