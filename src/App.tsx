@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Welcome from "./pages/Welcome/Welcome";
 import Prediction from "./pages/Prediction/Prediction";
 import Quiz from "./pages/Quiz/Quiz";
@@ -31,6 +31,21 @@ export default function App() {
   const [round, setRound] = useState<Question[]>([]);
   const [scores, setScores] = useState<StageScore[]>([]);
   const [error, setError] = useState("");
+  const [phase, setPhase] = useState<"idle" | "out" | "in">("idle");
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const locked = useRef(false);
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
+  function moveTo(next: () => void) {
+    if (locked.current) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { next(); return; }
+    locked.current = true;
+    setPhase("out");
+    timers.current.push(setTimeout(() => {
+      next();
+      setPhase("in");
+      timers.current.push(setTimeout(() => { setPhase("idle"); locked.current = false; }, 1050));
+    }, 950));
+  }
   const currentLevel = levels[level - 1];
   function prepareLevel(id: LevelId) {
     setLevel(id);
@@ -53,9 +68,9 @@ export default function App() {
     setScores((prev) => [...prev, { level, correct, total: round.length }]);
     const outcome = stageOutcome(level, correct);
     if (outcome === "advance") {
-      prepareLevel((level + 1) as LevelId);
+      moveTo(() => prepareLevel((level + 1) as LevelId));
     } else {
-      setScreen(outcome);
+      moveTo(() => setScreen(outcome));
     }
   }
   function restart() {
@@ -74,15 +89,16 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <div className={styles.app}>
         <MusicPlayer theme={theme} />
+        <div className={`${styles.transitionVeil} ${phase === "out" ? styles.veilOut : phase === "in" ? styles.veilIn : ""}`} aria-hidden="true" />
         <main className={styles.main}>
           {screen === "welcome" && (
-            <Welcome onStart={() => setScreen("prediction")} />
+            <Welcome onStart={() => moveTo(() => setScreen("prediction"))} />
           )}
           {screen === "prediction" && (
             <Prediction
               onContinue={(value) => {
                 setGuess(value);
-                prepareLevel(1);
+                moveTo(() => prepareLevel(1));
               }}
             />
           )}
@@ -92,7 +108,7 @@ export default function App() {
             </p>
           )}
           {screen === "levelIntro" && (
-            <LevelIntro level={currentLevel} onContinue={startLevel} />
+            <LevelIntro level={currentLevel} onContinue={() => moveTo(startLevel)} />
           )}
           {screen === "quiz" && round.length > 0 && (
             <Quiz
@@ -107,7 +123,7 @@ export default function App() {
               level={currentLevel}
               scores={scores}
               guess={guess}
-              onRestart={restart}
+              onRestart={() => moveTo(restart)}
             />
           )}
           {screen === "results" && (
