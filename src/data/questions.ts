@@ -49,8 +49,8 @@ export const questions: Question[] = [
     "options": [
       "Pizza",
       "Zereshk polo ba morgh (barberry rice with chicken)",
-      "Sushi",
-      "Pasta"
+      "Fesenjoon",
+      "Mushroom pasta"
     ],
     "correctIndex": 1
   },
