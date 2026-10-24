@@ -1,11 +1,28 @@
 import {useEffect,useRef,useState} from "react";
 import styles from "./MusicPlayer.module.css";
 import type {ThemeName} from "../../themes/themeConfig";
-const tracks:Record<ThemeName,string>={intro:"intro",bloom:"bloom",echo:"echo",veil:"veil",abyss:"abyss",void:"void"};
+const tracks:Record<ThemeName,string>={intro:"Intro",bloom:"Bloom",echo:"Echo",veil:"Veil",abyss:"Abyss",void:"Void"};
 export default function MusicPlayer({theme="intro"}:{theme?:ThemeName}){
  const ref=useRef<HTMLAudioElement>(null);
  const [playing,setPlaying]=useState(false);
- useEffect(()=>{setPlaying(false);if(ref.current){ref.current.pause();ref.current.load();}},[theme]);
- async function toggle(){if(!ref.current)return;if(playing){ref.current.pause();setPlaying(false);return;}try{await ref.current.play();setPlaying(true);}catch{setPlaying(false);}}
- return <div className={styles.player}><audio ref={ref} loop src={`${import.meta.env.BASE_URL}audio/${tracks[theme]}.mp3`} onEnded={()=>setPlaying(false)}/><button onClick={toggle} aria-label={playing?"Mute music":"Play music"}>{playing?"🔊":"🔇"}</button></div>;
+ const [blocked,setBlocked]=useState(false);
+ useEffect(()=>{
+   const audio=ref.current;
+   if(!audio)return;
+   audio.pause();
+   audio.src=`${import.meta.env.BASE_URL}sound/${tracks[theme]}.mp3`;
+   audio.load();
+   setPlaying(false);
+   setBlocked(false);
+   void audio.play().then(()=>setPlaying(true)).catch(()=>setBlocked(true));
+ },[theme]);
+ async function toggle(){
+   const audio=ref.current;if(!audio)return;
+   if(!audio.paused){audio.pause();setPlaying(false);return;}
+   try{await audio.play();setPlaying(true);setBlocked(false);}catch{setPlaying(false);setBlocked(true);}
+ }
+ return <div className={styles.player}>
+  <audio ref={ref} loop preload="auto" onPause={()=>setPlaying(false)} onPlay={()=>{setPlaying(true);setBlocked(false)}}/>
+  <button onClick={toggle} aria-label={playing?"Pause music":"Play music"} title={blocked?"Tap to enable music":playing?"Pause music":"Play music"}>{playing?"♫":"♪"}</button>
+ </div>;
 }
