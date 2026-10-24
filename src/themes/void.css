@@ -1,2 +1,2 @@
-.game-theme[data-theme="void"]{--scene:url("/hadisquiz/backgrounds/void.jpg");--accent:#d3d5e0;--progress:#989aaa;--text:#f1f1f5;--panel:#08090bd9;--border:#77798750;--blur:9px;--shade:radial-gradient(ellipse at center,#080a12c5,#000000f5 87%)}
-.game-theme[data-theme="void"]::before{filter:blur(var(--blur)) grayscale(1) brightness(.58);animation-duration:42s}
+.game-theme[data-theme="void"]{--scene:url("/hadisquiz/backgrounds/void.jpg");--text:#f1f1f5;--accent:#c9cbd7;--progress:#d7d9e5;--panel:#15151fd6;--border:#676978;--blur:7px;--shade:radial-gradient(ellipse at center,#0b0b1599,#000000eb 85%);background:#07080b}
+.game-theme[data-theme="void"]::before{filter:blur(var(--blur)) grayscale(1) brightness(.75);animation-duration:42s}
