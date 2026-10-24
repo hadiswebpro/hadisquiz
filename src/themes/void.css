@@ -1,0 +1,2 @@
+.game-theme[data-theme="void"]{--scene:url("/hadisquiz/backgrounds/void.jpg");--accent:#d3d5e0;--progress:#989aaa;--text:#f1f1f5;--panel:#08090bd9;--border:#77798750;--blur:9px;--shade:radial-gradient(ellipse at center,#080a12c5,#000000f5 87%)}
+.game-theme[data-theme="void"]::before{filter:blur(var(--blur)) grayscale(1) brightness(.58);animation-duration:42s}
