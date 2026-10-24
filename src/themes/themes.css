@@ -1,6 +1,6 @@
-.game-theme{--text:#20362e;--panel:#ffffffc9;--accent:#78a886;--border:#a2bca7;--progress:#78a886;--scene:none;--shade:linear-gradient(135deg,#f7faf180,#e7e9e060);--blur:3px;position:relative;isolation:isolate;min-height:100vh;color:var(--text);background:#f7faf2;transition:color .7s,background-color .7s}
+.game-theme{--text:#20362e;--panel:#ffffffb8;--accent:#78a886;--border:#a2bca7;--progress:#78a886;--scene:none;--shade:linear-gradient(135deg,#f7faf12a,#e7e9e01c);--blur:3px;--reveal-duration:2.4s;position:relative;isolation:isolate;min-height:100vh;color:var(--text);background:#f7faf2;transition:color .7s,background-color .7s}
 .game-theme::before,.game-theme::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0}
-.game-theme::before{background-image:var(--scene);background-size:cover;background-position:center;background-repeat:no-repeat;filter:blur(var(--blur));transform:scale(1.04);opacity:0;transition:opacity 2.8s ease-in-out;animation:sceneBreath 30s ease-in-out infinite alternate}
+.game-theme::before{background-image:var(--scene);background-size:cover;background-position:center;background-repeat:no-repeat;filter:blur(var(--blur));transform:scale(1.04);opacity:0;animation:sceneBreath 30s ease-in-out infinite alternate}
 .game-theme::after{background:var(--shade)}
 .game-theme>*{position:relative;z-index:1}
 .game-theme :is(section,article,form){color:var(--text)}
@@ -8,12 +8,11 @@
 .game-theme :is(button,input,select){font:inherit}
 .game-theme button{transition:transform .2s,background-color .2s}
 .game-theme button:hover{transform:translateY(-1px)}
+.game-theme[data-scene-ready="true"]::before{animation:sceneBreath 30s ease-in-out infinite alternate,sceneReveal var(--reveal-duration) ease-in-out both}
+.game-theme[data-theme="echo"]{--reveal-duration:2.8s}
+.game-theme[data-theme="veil"]{--reveal-duration:3.2s}
+.game-theme[data-theme="abyss"]{--reveal-duration:3.6s}
+.game-theme[data-theme="void"]{--reveal-duration:4.2s}
+@keyframes sceneReveal{from{opacity:0}to{opacity:1}}
 @keyframes sceneBreath{to{transform:scale(1.075)}}
-@media(prefers-reduced-motion:reduce){.game-theme::before{animation:none}.game-theme button{transition:none}}
-
-.game-theme[data-scene-ready="true"]::before{opacity:1}
-.game-theme[data-theme="echo"]::before{transition-duration:3s}
-.game-theme[data-theme="veil"]::before{transition-duration:3.3s}
-.game-theme[data-theme="abyss"]::before{transition-duration:3.7s}
-.game-theme[data-theme="void"]::before{transition-duration:4.2s}
-@media(prefers-reduced-motion:reduce){.game-theme::before{transition:none}}
+@media(prefers-reduced-motion:reduce){.game-theme::before{animation:none;opacity:1}.game-theme button{transition:none}}
