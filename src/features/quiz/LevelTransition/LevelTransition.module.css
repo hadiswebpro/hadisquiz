@@ -1,1 +1,16 @@
-.transition{text-align:center;display:grid;justify-items:center;gap:1rem;animation:appear .65s ease}.transition span{font-size:4rem}.transition h1{font-size:clamp(2rem,6vw,4rem);margin:0}
+.transition {
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    animation: appear .65s ease
+}
+
+.transition span {
+    font-size: 4rem
+}
+
+.transition h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin: 0
+}

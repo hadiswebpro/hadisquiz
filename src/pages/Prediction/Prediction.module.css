@@ -1,1 +1,16 @@
-.prediction{display:grid;gap:2rem;text-align:center;justify-items:center}.prediction output{font-size:clamp(3rem,9vw,6rem);font-weight:800}.prediction input{width:min(100%,440px);accent-color:var(--accent)}
+.prediction {
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+    justify-items: center
+}
+
+.prediction output {
+    font-size: clamp(3rem, 9vw, 6rem);
+    font-weight: 800
+}
+
+.prediction input {
+    width: min(100%, 440px);
+    accent-color: var(--accent)
+}
