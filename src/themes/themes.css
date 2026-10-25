@@ -6,7 +6,7 @@
     --progress: #78a886;
     --scene: none;
     --shade: linear-gradient(135deg, #f7faf12a, #e7e9e01c);
-    --blur: 3px;
+    --blur: 1px;
     --reveal-duration: 2.4s;
     position: relative;
     isolation: isolate;
