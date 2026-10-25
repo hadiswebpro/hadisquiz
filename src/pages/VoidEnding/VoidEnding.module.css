@@ -1,5 +1,5 @@
-.finalScene{position:fixed;inset:0;z-index:30;display:grid;place-items:center;overflow-y:auto;padding:1rem;isolation:isolate;background:#05020b url("/hadisquiz/backgrounds/void.jpg") center/cover no-repeat;color:#e9d9ff}
-.darkness{position:fixed;inset:0;z-index:-1;background:#000;opacity:0;animation:fadeToNothing 5.5s ease-in-out .7s forwards;pointer-events:none}
+.finalScene{position:fixed;inset:0;z-index:30;display:grid;place-items:center;overflow-y:auto;padding:1rem;isolation:isolate;background:#000;color:#e9d9ff}
+.darkness{position:fixed;inset:0;z-index:-1;background:#000;pointer-events:none}.darkness::after{content:"";position:absolute;inset:0;background:url("/hadisquiz/backgrounds/voidcomplete.jpg") center/cover no-repeat;opacity:0;animation:revealVoidBackground 5s ease 5.5s forwards}
 .finalScene::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0;background-image:radial-gradient(2px 2px at 12% 18%,#e6d4ff 70%,transparent),radial-gradient(1px 1px at 70% 22%,#fff 70%,transparent),radial-gradient(2px 2px at 86% 70%,#bba0ff 70%,transparent),radial-gradient(1px 1px at 33% 78%,#fff 70%,transparent),radial-gradient(1px 1px at 58% 52%,#dac5ff 70%,transparent),radial-gradient(2px 2px at 20% 60%,#fff 70%,transparent);background-size:310px 270px;animation:starsAppear 2s ease 5.8s forwards,twinkle 3.5s ease-in-out 7.8s infinite alternate}
 .ending{width:min(100%,560px);max-height:calc(100dvh - 2rem);overflow-y:auto;text-align:center;padding:clamp(1.3rem,3vw,2.2rem);border:1px solid #9b7ac35c;border-radius:18px;background:#090412b8;backdrop-filter:blur(12px);box-shadow:0 0 55px #a778f026;opacity:0;animation:revealLetter 2.8s ease 7.3s forwards}
 .ending h1{font-size:clamp(1.25rem,3vw,1.85rem);letter-spacing:.13em;font-weight:400;margin:.3rem 0 .8rem;color:#e6d1ff}
@@ -8,8 +8,8 @@
 .spark{display:block;font-size:1.6rem;color:#cba8ff;margin-bottom:.35rem;text-shadow:0 0 18px #aa7bff}
 .letter{margin:1rem auto!important;max-width:49ch;color:#f1e5ff!important}
 .score{margin:1rem 0;font-size:.75rem;color:#c4aedb}
-@keyframes fadeToNothing{to{opacity:1}}
+@keyframes revealVoidBackground{to{opacity:1}}
 @keyframes starsAppear{to{opacity:.9}}
 @keyframes twinkle{from{opacity:.35}to{opacity:1}}
 @keyframes revealLetter{from{opacity:0;transform:translateY(26px);filter:blur(9px)}to{opacity:1;transform:none;filter:blur(0)}}
-@media(prefers-reduced-motion:reduce){.darkness{animation:none;opacity:1}.finalScene::after{animation:none;opacity:.8}.ending{animation:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.darkness::after{animation:none;opacity:1}.finalScene::after{animation:none;opacity:.8}.ending{animation:none;opacity:1}}
