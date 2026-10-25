@@ -1,106 +1,15 @@
-.finalScene {
-    position: fixed;
-    inset: 0;
-    z-index: 30;
-    display: grid;
-    place-items: center;
-    overflow-y: auto;
-    padding: 1rem;
-    isolation: isolate
-}
-
-.darkness {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: #000;
-    opacity: 0;
-    animation: fadeToNothing 5.5s ease-in-out 1.5s forwards;
-    pointer-events: none
-}
-
-.ending {
-    width: min(100%, 520px);
-    max-height: calc(100dvh - 2rem);
-    overflow-y: auto;
-    text-align: center;
-    padding: clamp(1rem, 2vw, 1.5rem);
-    border: 1px solid #8b8d9d45;
-    border-radius: 18px;
-    background: #090a0ddc;
-    backdrop-filter: blur(16px);
-    box-shadow: 0 0 45px #a4a9d414;
-    opacity: 0;
-    animation: revealLetter 2.6s ease 7s forwards
-}
-
-.ending h1 {
-    font-size: clamp(1.2rem, 3vw, 1.7rem);
-    letter-spacing: .1em;
-    font-weight: 400;
-    margin: .25rem 0 .6rem
-}
-
-.ending p {
-    font-size: clamp(.8rem, 1.5vw, .92rem);
-    line-height: 1.55;
-    letter-spacing: .01em;
-    margin: .45rem 0
-}
-
-.eyebrow {
-    font-size: .68rem !important;
-    letter-spacing: .2em !important;
-    opacity: .7
-}
-
-.spark {
-    display: block;
-    font-size: 1.35rem;
-    color: #e2e3eea3;
-    margin-bottom: .2rem
-}
-
-.letter {
-    margin: .8rem auto !important;
-    max-width: 49ch;
-    color: #f5f0f3
-}
-
-.score {
-    margin: .7rem 0;
-    font-size: .72rem;
-    opacity: .6
-}
-
-@keyframes fadeToNothing {
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes revealLetter {
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-        filter: blur(7px)
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-        filter: blur(0)
-    }
-}
-
-@media(prefers-reduced-motion:reduce) {
-    .darkness {
-        animation: none;
-        opacity: 1
-    }
-
-    .ending {
-        animation: none;
-        opacity: 1
-    }
-}
+.finalScene{position:fixed;inset:0;z-index:30;display:grid;place-items:center;overflow-y:auto;padding:1rem;isolation:isolate;background:#05020b url("/hadisquiz/backgrounds/void.jpg") center/cover no-repeat;color:#e9d9ff}
+.darkness{position:fixed;inset:0;z-index:-1;background:#000;opacity:0;animation:fadeToNothing 5.5s ease-in-out .7s forwards;pointer-events:none}
+.finalScene::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0;background-image:radial-gradient(2px 2px at 12% 18%,#e6d4ff 70%,transparent),radial-gradient(1px 1px at 70% 22%,#fff 70%,transparent),radial-gradient(2px 2px at 86% 70%,#bba0ff 70%,transparent),radial-gradient(1px 1px at 33% 78%,#fff 70%,transparent),radial-gradient(1px 1px at 58% 52%,#dac5ff 70%,transparent),radial-gradient(2px 2px at 20% 60%,#fff 70%,transparent);background-size:310px 270px;animation:starsAppear 2s ease 5.8s forwards,twinkle 3.5s ease-in-out 7.8s infinite alternate}
+.ending{width:min(100%,560px);max-height:calc(100dvh - 2rem);overflow-y:auto;text-align:center;padding:clamp(1.3rem,3vw,2.2rem);border:1px solid #9b7ac35c;border-radius:18px;background:#090412b8;backdrop-filter:blur(12px);box-shadow:0 0 55px #a778f026;opacity:0;animation:revealLetter 2.8s ease 7.3s forwards}
+.ending h1{font-size:clamp(1.25rem,3vw,1.85rem);letter-spacing:.13em;font-weight:400;margin:.3rem 0 .8rem;color:#e6d1ff}
+.ending p{font-size:clamp(.84rem,1.5vw,.98rem);line-height:1.7;letter-spacing:.02em;margin:.55rem 0;color:#d9c8ec}
+.eyebrow{font-size:.7rem!important;letter-spacing:.23em!important;color:#bd9bea!important}
+.spark{display:block;font-size:1.6rem;color:#cba8ff;margin-bottom:.35rem;text-shadow:0 0 18px #aa7bff}
+.letter{margin:1rem auto!important;max-width:49ch;color:#f1e5ff!important}
+.score{margin:1rem 0;font-size:.75rem;color:#c4aedb}
+@keyframes fadeToNothing{to{opacity:1}}
+@keyframes starsAppear{to{opacity:.9}}
+@keyframes twinkle{from{opacity:.35}to{opacity:1}}
+@keyframes revealLetter{from{opacity:0;transform:translateY(26px);filter:blur(9px)}to{opacity:1;transform:none;filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.darkness{animation:none;opacity:1}.finalScene::after{animation:none;opacity:.8}.ending{animation:none;opacity:1}}
