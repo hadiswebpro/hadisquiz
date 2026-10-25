@@ -413,7 +413,7 @@ export const questions: Question[] = [
     "options": [
       "Not receiving the same care I've given someone I love",
       "They don't agree with me",
-      "They don't want my worst",
+      "They don't want my worst self",
       "They need time alone"
     ],
     "correctIndex": 2
@@ -554,10 +554,10 @@ export const questions: Question[] = [
     "prompt": "What's one of my greatest fears about people I love?",
     "emoji": "🖤",
     "options": [
-      "Failing at work",
-      "Being alone forever",
-      "Losing my independence",
-      "Hurting and disappointing them until they leave"
+      "I am not thier number one",
+      "They leave me for someone else",
+      "Losing my independence with them",
+      "Hurting and disappointing them untill they leave"
     ],
     "correctIndex": 3
   },
@@ -593,12 +593,12 @@ export const questions: Question[] = [
     "prompt": "What do I dislike people assuming about my kindness?",
     "emoji": "🖤",
     "options": [
-      "That I hate everyone",
+      "That it's free and unconditionally",
       "That I value everyone equally",
-      "That I'm always pretending",
-      "That I never care about anyone"
+      "That I'm always protecting and don't need them ",
+      "That I care about all of them"
     ],
-    "correctIndex": 1
+    "correctIndex": 0
   },
   {
     "id": 47,
@@ -645,10 +645,10 @@ export const questions: Question[] = [
     "prompt": "What would convince me someone doesn't love me?",
     "emoji": "🖤",
     "options": [
-      "They knowingly hurt me and feel no remorse",
-      "They disagree with me",
-      "They forget one message",
-      "They need space"
+      "They knowingly hurt me where they know i'll bleed",
+      "They disagree with me all the time",
+      "They forget one message and our date",
+      "They need space and i should be alone"
     ],
     "correctIndex": 0
   },
@@ -918,9 +918,9 @@ export const questions: Question[] = [
     "prompt": "What would I refuse to do just to express love?",
     "emoji": "🪻",
     "options": [
-      "Change who I am",
+      "Change who I am and give up my goals",
       "Agree with everything",
-      "Give up my goals",
+      "Give up other people",
       "Never spend time alone"
     ],
     "correctIndex": 0
@@ -1180,8 +1180,8 @@ export const questions: Question[] = [
     "options": [
       "Everyone I've met",
       "No one has ever seen any part of me",
-      "Only one person: someone I was in love with",
-      "Only my classmates"
+      "Only that one person",
+      "Only my close friends"
     ],
     "correctIndex": 2
   },
@@ -1192,8 +1192,8 @@ export const questions: Question[] = [
     "emoji": "🖤",
     "options": [
       "I'd give my life without hesitation to make them feel better",
-      "I'd wait for someone else",
-      "I'd send a short message",
+      "I'd always wait for them",
+      "I'd send a short message and then giveup",
       "I'd only help if convenient"
     ],
     "correctIndex": 0
@@ -1204,7 +1204,7 @@ export const questions: Question[] = [
     "prompt": "What matters to me in how I treat loved ones?",
     "emoji": "🖤",
     "options": [
-      "Always agreeing with them",
+      "Always agreeing with them and loving them",
       "Buying them gifts",
       "Never exploiting or betraying them",
       "Avoiding difficult conversations"
@@ -1230,12 +1230,12 @@ export const questions: Question[] = [
     "prompt": "What would make my dream life stop being my dream life?",
     "emoji": "🖤",
     "options": [
-      "Learning a new skill",
+      "Losing someone that i love",
       "Moving to a new city",
-      "Having to give up something I truly love",
+      "Having to give up my dreams",
       "Changing my routine"
     ],
-    "correctIndex": 2
+    "correctIndex": 0
   },
   {
     "id": 96,
