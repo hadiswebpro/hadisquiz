@@ -73,7 +73,7 @@ src/
 └── types/          # Shared TypeScript types
 public/
 ├── backgrounds/    # World background images
-└── sound/          # World soundtracks (when provided)
+└── audio/          # World soundtracks (when provided)
 .github/
 └── workflows/
     └── deploy.yml  # Automatic GitHub Pages deployment

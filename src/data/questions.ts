@@ -195,7 +195,7 @@ export const questions: Question[] = [
       "Daydreaming",
       "Remembering the past"
     ],
-    "correctIndex": 2
+    "correctIndex": 3
   },
   {
     "id": 16,
@@ -364,7 +364,7 @@ export const questions: Question[] = [
       "A joke",
       "A cry for help"
     ],
-    "correctIndex": 3
+    "correctIndex": 1
   },
   {
     "id": 29,
@@ -413,10 +413,10 @@ export const questions: Question[] = [
     "options": [
       "Not receiving the same care I've given someone I love",
       "They don't agree with me",
-      "They don't buy me gifts",
+      "They don't want my worst",
       "They need time alone"
     ],
-    "correctIndex": 0
+    "correctIndex": 2
   },
   {
     "id": 33,
@@ -583,7 +583,7 @@ export const questions: Question[] = [
       "They praise me publicly",
       "Someone compromising for me and forgiving me",
       "They always agree with me",
-      "They buy me things"
+      "They support me "
     ],
     "correctIndex": 1
   },

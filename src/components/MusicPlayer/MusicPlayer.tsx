@@ -22,7 +22,7 @@ export default function MusicPlayer({ theme = "intro" }: { theme?: ThemeName }) 
     if (!audio) return;
 
     audio.pause();
-    audio.src = `${import.meta.env.BASE_URL}sound/${tracks[theme]}.mp3`;
+    audio.src = `${import.meta.env.BASE_URL}audio/${tracks[theme]}.mp3`;
     audio.load();
     setPlaying(false);
     setBlocked(false);
