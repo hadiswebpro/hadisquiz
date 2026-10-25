@@ -1,16 +1,15 @@
 .game-theme[data-theme="void"] {
-    --scene: url("/hadisquiz/backgrounds/void.jpg");
-    --text: #e6d7ff;
-    --accent: #c3a2ff;
-    --progress: #a983ee;
-    --panel: #10091fc4;
-    --border: #8c6bb08a;
+    --text: #f0edf3;
+    --accent: #b8b8c2;
+    --progress: #d2d2da;
+    --panel: #070709d9;
+    --border: #5e5e6870;
     --blur: 1px;
-    --shade: radial-gradient(ellipse at center, #10061b30, #06020c83 95%);
-    background: #07080b
+    --shade: radial-gradient(ellipse at center, #00000065, #000000c7 95%);
+    background: #020203;
 }
 
 .game-theme[data-theme="void"]::before {
-    filter: blur(var(--blur)) brightness(.95) saturate(1.15);
-    animation-duration: 42s
+    filter: blur(var(--blur)) grayscale(1) brightness(.45);
+    animation-duration: 42s;
 }
