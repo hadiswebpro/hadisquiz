@@ -37,14 +37,24 @@ export default function App() {
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
   function moveTo(next: () => void) {
     if (locked.current) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { next(); return; }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      next();
+      return;
+    }
     locked.current = true;
     setPhase("out");
-    timers.current.push(setTimeout(() => {
-      next();
-      setPhase("in");
-      timers.current.push(setTimeout(() => { setPhase("idle"); locked.current = false; }, 1050));
-    }, 950));
+    timers.current.push(
+      setTimeout(() => {
+        next();
+        setPhase("in");
+        timers.current.push(
+          setTimeout(() => {
+            setPhase("idle");
+            locked.current = false;
+          }, 1050),
+        );
+      }, 950),
+    );
   }
   const currentLevel = levels[level - 1];
   function prepareLevel(id: LevelId) {
@@ -89,7 +99,10 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <div className={styles.app}>
         <MusicPlayer theme={theme} />
-        <div className={`${styles.transitionVeil} ${phase === "out" ? styles.veilOut : phase === "in" ? styles.veilIn : ""}`} aria-hidden="true" />
+        <div
+          className={`${styles.transitionVeil} ${phase === "out" ? styles.veilOut : phase === "in" ? styles.veilIn : ""}`}
+          aria-hidden="true"
+        />
         <main className={styles.main}>
           {screen === "welcome" && (
             <Welcome onStart={() => moveTo(() => setScreen("prediction"))} />
@@ -108,7 +121,10 @@ export default function App() {
             </p>
           )}
           {screen === "levelIntro" && (
-            <LevelIntro level={currentLevel} onContinue={() => moveTo(startLevel)} />
+            <LevelIntro
+              level={currentLevel}
+              onContinue={() => moveTo(startLevel)}
+            />
           )}
           {screen === "quiz" && round.length > 0 && (
             <Quiz
