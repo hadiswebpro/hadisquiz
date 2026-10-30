@@ -19,10 +19,12 @@
     pointer-events: none
 }
 
-.privateScene .darkness::after {
+.privateScene::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
+    z-index: 0;
+    pointer-events: none;
     background: url("/hadisquiz/backgrounds/voidcomplete.png") center/cover no-repeat;
     opacity: 0;
     animation: revealVoidBackground 6s ease-out forwards
@@ -137,7 +139,7 @@
 }
 
 @media(prefers-reduced-motion:reduce) {
-    .darkness::after {
+    .privateScene::before {
         animation: none;
         opacity: .85
     }
