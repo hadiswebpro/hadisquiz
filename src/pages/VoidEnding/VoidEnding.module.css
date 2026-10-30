@@ -7,7 +7,7 @@
     overflow-y: auto;
     padding: 1rem;
     isolation: isolate;
-    background: #000;
+    background: #080711;
     color: #e9d9ff
 }
 
@@ -15,7 +15,7 @@
     position: fixed;
     inset: 0;
     z-index: 0;
-    background: #000;
+    background: transparent;
     pointer-events: none
 }
 
@@ -25,7 +25,7 @@
     inset: 0;
     background: url("/hadisquiz/backgrounds/voidcomplete.png") center/cover no-repeat;
     opacity: 0;
-    animation: revealVoidBackground 5s ease 5.5s forwards
+    animation: revealVoidBackground 6s ease-out forwards
 }
 
 .finalScene::after {
@@ -101,7 +101,7 @@
 
 @keyframes revealVoidBackground {
     to {
-        opacity: 1
+        opacity: .85
     }
 }
 
@@ -138,7 +138,7 @@
 @media(prefers-reduced-motion:reduce) {
     .darkness::after {
         animation: none;
-        opacity: 1
+        opacity: .85
     }
 
     .finalScene::after {
