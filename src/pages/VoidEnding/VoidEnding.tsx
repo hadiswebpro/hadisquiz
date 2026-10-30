@@ -42,7 +42,7 @@ export default function VoidEnding({ guess, scores, onRestart }: { guess: number
           <p>You didn't just reach the end. You saw the parts of me that most people never get to see.</p>
           <p>And somehow, you stayed.</p>
           <p className={styles.letter}>You are probably my everything. Just know that I value you more than anyone in my life, and I will always try to make you happy, my darling. You make this void a bit warmer, a bit lighter, and easier to live with. So thank you for being mine.</p>
-          <div className={styles.score}>Your rank: {rank} · Your score: {actual}% · Your guess: {guess}% · Difference: {difference > 0 ? "+" : ""}{difference} points</div>
+          <div className={styles.score}>Your rank: The One Who Knows · Your score: {actual}% · Your guess: {guess}% · Difference: {difference > 0 ? "+" : ""}{difference} points</div>
           <Button onClick={onRestart}>BEGIN AGAIN ↺</Button>
         </section>
       ) : (
