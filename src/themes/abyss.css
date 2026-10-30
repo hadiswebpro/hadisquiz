@@ -3,9 +3,9 @@
     --text: #edf1fa;
     --accent: #91abd0;
     --progress: #7396c4;
-    --panel: #1c2940d6;
+    --panel: #1c2940b8;
     --border: #536782;
-    --blur: 6px;
-    --shade: linear-gradient(145deg, #030a17a8, #101b34d6);
+    --blur: 0px;
+    --shade: linear-gradient(145deg, #030a172e, #101b344d);
     background: #101b34
 }
