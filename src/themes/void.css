@@ -2,14 +2,14 @@
     --text: #f0edf3;
     --accent: #b8b8c2;
     --progress: #d2d2da;
-    --panel: #070709d9;
+    --panel: #070709b3;
     --border: #5e5e6870;
-    --blur: 1px;
-    --shade: radial-gradient(ellipse at center, #00000065, #000000c7 95%);
+    --blur: 0px;
+    --shade: radial-gradient(ellipse at center, #00000020, #00000059 95%);
     background: #020203;
 }
 
 .game-theme[data-theme="void"]::before {
-    filter: blur(var(--blur)) grayscale(1) brightness(.45);
+    filter: none;
     animation-duration: 42s;
 }
