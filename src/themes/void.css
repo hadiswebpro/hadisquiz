@@ -11,5 +11,4 @@
 
 .game-theme[data-theme="void"]::before {
     filter: none;
-    animation-duration: 42s;
 }
