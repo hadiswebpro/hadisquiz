@@ -19,7 +19,7 @@
     pointer-events: none
 }
 
-.darkness::after {
+.privateScene .darkness::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -28,7 +28,7 @@
     animation: revealVoidBackground 6s ease-out forwards
 }
 
-.finalScene::after {
+.starScene::after,\n.privateScene::after {
     content: "";
     position: fixed;
     inset: 0;
@@ -149,5 +149,64 @@
     .ending {
         animation: none;
         opacity: 1
+    }
+}
+
+.passwordCard {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 460px);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+    border: 1px solid #9b7ac35c;
+    border-radius: 18px;
+    background: #090412d9;
+    color: #e9d9ff;
+    box-shadow: 0 0 55px #a778f026;
+}
+
+.passwordCard h1 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    letter-spacing: .12em;
+}
+
+.passwordForm {
+    display: grid;
+    gap: .9rem;
+    margin-top: 1.4rem;
+    text-align: left;
+}
+
+.passwordForm label {
+    font-size: .85rem;
+}
+
+.passwordForm input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .85rem 1rem;
+    border: 1px solid #9b7ac3;
+    border-radius: 10px;
+    background: #150e23;
+    color: #fff;
+    font: inherit;
+}
+
+.starScene {
+    background: #020207;
+}
+
+.starScene .darkness {
+    background: #020207;
+}
+
+.starScene .ending {
+    animation: revealLetter 1.5s ease .5s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .starScene .ending {
+        animation: none;
+        opacity: 1;
     }
 }
