@@ -28,7 +28,8 @@
     animation: revealVoidBackground 6s ease-out forwards
 }
 
-.starScene::after,\n.privateScene::after {
+.starScene::after,
+.privateScene::after {
     content: "";
     position: fixed;
     inset: 0;
@@ -198,6 +199,10 @@
 
 .starScene .darkness {
     background: #020207;
+}
+
+.privateScene .darkness {
+    background: transparent;
 }
 
 .starScene .ending {
